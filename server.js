@@ -21,8 +21,8 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.get('/fake-terminal.html', function(req, res) {
-	res.sendFile(path.join(__dirname, './fake-terminal.html'))
+app.get('/resume', function(req, res) {
+	res.sendFile(path.join(__dirname, './resume.pdf'))
 })
 
 app.get('/', function(req, res) {

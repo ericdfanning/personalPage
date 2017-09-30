@@ -1,35 +1,258 @@
 body {
-  background: black;
-  color: #40FF57;
+  color: #1ec503;
   width: 100%;
   height: 100%;
   padding: 0;
   margin:  0;
   box-sizing: border-box;
-  font-weight: bold;
-  font-size: 1em; 
-  border: none;
   font-family: "Courier New", sans-serif !important;
 }
 
-.mainBody {
-	background-color: black;
-	height: 100vh;
-	width: 100%;
-	color: #40FF57;
+@media only screen and (min-width : 320px) {
+
+	.terminalOwnerName {
+		font-size: 13px;
+		margin-right: 10px;
+		padding-left: 2px !important;
+		padding-top: 3px;
+	}
+
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		margin-right: 0px;
+		outline: none;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 13px;
+	}
+
+	.noCommandInput {
+		font-size: 13px;
+		padding-left: 2px !important;
+	}
+
+	.normalCommand {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-left: 25px;
+		font-size: 13px;
+	}
+
+	.helpCommand {
+		font-size: 13px;
+	}
 }
 
-.terminalOwnerName {
-	margin-right: 10px;
+@media only screen and (min-width : 480px) {
+	.commandLineInput {
+
+	}
+
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+		font-size: 1.25em;
+	}
+
+	.terminalOwnerName {
+		margin-right: 10px;
+		font-size: 20px;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		outline: none;
+		overflow-wrap: break-word;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 20px;
+	}
+
+	.noCommandInput {
+		font-size: 20px;
+		padding-left: 2px !important;
+	}
+
+	.normalCommand {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-left: 25px;
+		font-size: 20px;
+	}
+
+	.helpCommand {
+		font-size: 20px;
+	}
 }
 
-input {
-	font-family: inherit;
-	background-color: black;
-	font-weight: normal;
-	color: #40FF57;
-	width: 100%;
-	border: none;
-	outline: none;
-	overflow-wrap: break-word;
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+	.commandLineInput {
+
+	}
+
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+		font-size: 1.25em;
+	}
+
+	.terminalOwnerName {
+		margin-right: 10px;
+		font-size: 20px;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		outline: none;
+		overflow-wrap: break-word;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 20px;
+	}
+
+	.noCommandInput {
+		font-size: 20px;
+		padding-left: 2px !important;
+	}
+
+	.normalCommand {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-left: 25px;
+		font-size: 20px;
+	}
+
+	.helpCommand {
+		font-size: 20px;
+	}
 }
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+	.commandLineInput {
+
+	}
+
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+		font-size: 1.25em;
+	}
+
+	.terminalOwnerName {
+		margin-right: 10px;
+		font-size: 20px;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		outline: none;
+		overflow-wrap: break-word;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 20px;
+	}
+
+	.noCommandInput {
+		font-size: 20px;
+		padding-left: 2px !important;
+	}
+
+	.normalCommand {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-left: 25px;
+		font-size: 20px;
+	}
+
+	.helpCommand {
+		font-size: 20px;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+	.commandLineInput {
+
+	}
+
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+		font-size: 1.25em;
+	}
+
+	.terminalOwnerName {
+		margin-right: 10px;
+		font-size: 20px;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		outline: none;
+		overflow-wrap: break-word;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 20px;
+	}
+
+	.noCommandInput {
+		font-size: 20px;
+		padding-left: 2px !important;
+	}
+
+	.normalCommand {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		margin-left: 25px;
+		font-size: 20px;
+	}
+	
+	.helpCommand {
+		font-size: 20px;
+	}
+}
+
+
+
+/* BRIGHTER GREEN FONT #40FF57 */
+/* OTHER FONT CHOICE "Terminal Dosis"*/
