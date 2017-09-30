@@ -49,7 +49,8 @@ class App extends React.Component {
  		// create element to insert into the terminal window
 		let commandResult = document.createElement('div');
 
-		if (commands[input]) {
+		console.log('inside clear', input === 'clear()')
+		if (commands[input.toUpperCase()]) {
 			if (input === 'help') {
 				for (let i = 0; i < commands.help.length; i++) {
 					let commandResultHelp = document.createElement('div');
@@ -62,11 +63,13 @@ class App extends React.Component {
 				// set top and bottom margin for readability for commands with returned info
 				console.log('font size', this.state.fontSize)
 				commandResult.className = 'normalCommand'
-				commandResult.innerHTML = commands[input]
+				commandResult.innerHTML = commands[input.toUpperCase()]
 				// add element to the terminal window
 				el.append(commandResult)
 		  }
 
+		} else if (input === 'clear()') {
+			el.innerHTML = ''
 		} else {
 			// if command not recognized, return this 'error' statement
 			// commandResult.style.cssText = `font-size:${this.state.fontSize};`
