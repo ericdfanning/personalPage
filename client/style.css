@@ -1,0 +1,35 @@
+body {
+  background: black;
+  color: #40FF57;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin:  0;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 1em; 
+  border: none;
+  font-family: "Courier New", sans-serif !important;
+}
+
+.mainBody {
+	background-color: black;
+	height: 100vh;
+	width: 100%;
+	color: #40FF57;
+}
+
+.terminalOwnerName {
+	margin-right: 10px;
+}
+
+input {
+	font-family: inherit;
+	background-color: black;
+	font-weight: normal;
+	color: #40FF57;
+	width: 100%;
+	border: none;
+	outline: none;
+	overflow-wrap: break-word;
+}

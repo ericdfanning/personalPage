@@ -21,6 +21,10 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
+app.get('/fake-terminal.html', function(req, res) {
+	res.sendFile(path.join(__dirname, './fake-terminal.html'))
+})
+
 app.get('/', function(req, res) {
 
   res.status(200)
