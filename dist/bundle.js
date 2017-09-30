@@ -20007,7 +20007,11 @@ var commands = exports.commands = {
 	whatami: 'A Software Engineer',
 	hello: 'Hello, Eric!....This is Eric right?', // set up separate prompt here for y/n and to gather persons name. Set up email notification with deets
 	about: 'Im a software engineer!',
-	help: ['Try these commands: ', 'whoami', 'whatami', 'about']
+	contactInfo: 'ericdfanning@gmail.com <br> (262) 237-2927 <br> <a href="linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a>',
+	myApps: 'Rentopia <a href="http://github.com/ericdfanning" target="_blank">github.com/ericdfanning</a><br><br>' + 'LifeTime Capsule <a href="github.com/ericdfanning/LifetimeCapsule" target="_blank">github.com/ericdfanning/LifetimeCapsule</a><br><br>' + 'Bair Data <a href="http://thebairdata.com" target="_blank">thebairdata.com</a><br><br>' + 'And others...',
+	resume: '<a href="/resume" target="_blank"> MyResume.pdf </a>',
+	links: '<a href="http://github.com/ericdfanning" target="_blank">github.com/ericdfanning</a><br><br><a href="http://thebairdata.com" target="_blank">thebairdata.com</a>',
+	help: ['Try these commands: ', 'whoami', 'whatami', 'about', 'myApps', 'links', 'contactInfo']
 };
 
 /***/ }),
@@ -21023,7 +21027,8 @@ var App = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
 		_this.state = {
-			isMobile: false
+			isMobile: false,
+			ownerText: 'Eric-Fannings-MacBook:~ EFanning$ '
 		};
 		return _this;
 	}
@@ -21031,17 +21036,18 @@ var App = function (_React$Component) {
 	_createClass(App, [{
 		key: 'componentWillMount',
 		value: function componentWillMount() {
+			//check to see if device is laptop or phone
 			var w = window,
 			    d = document,
 			    e = d.documentElement,
 			    g = d.getElementsByTagName('body')[0],
 			    x = w.innerWidth || e.clientWidth || g.clientWidth,
 			    y = w.innerHeight || e.clientHeight || g.clientHeight;
-			var mobile = false;
 			if (x < 481) {
-				mobile = true;
+				this.setState({ isMobile: true, ownerText: 'EFannings-Mac:~ $ ' });
+			} else {
+				this.setState({ isMobile: false });
 			}
-			this.setState({ isMobile: mobile });
 		}
 
 		// componentDidMount() {
@@ -21061,7 +21067,7 @@ var App = function (_React$Component) {
 			var el = document.getElementById('terminalBody');
 
 			var terminalOwnerElement = document.createElement('div');
-			terminalOwnerElement.innerHTML = 'Eric-Fannings-MacBook:~ EFanning$ ' + input;
+			terminalOwnerElement.innerHTML = this.state.ownerText + input;
 			el.append(terminalOwnerElement);
 			e.target.commandLineInput.value = '';
 
@@ -21072,19 +21078,23 @@ var App = function (_React$Component) {
 				if (input === 'help') {
 					for (var i = 0; i < _commands.commands.help.length; i++) {
 						var commandResultHelp = document.createElement('div');
+						commandResult.className = 'helpCommand';
 						i === 0 ? commandResultHelp.style.cssText = 'margin-left:10px;' : commandResultHelp.style.cssText = 'margin-left:25px;';
 						commandResultHelp.innerHTML = _commands.commands.help[i];
 						el.append(commandResultHelp);
 					}
 				} else {
 					// set top and bottom margin for readability for commands with returned info
-					commandResult.style.cssText = 'margin-top:20px;margin-bottom:20px;margin-left:25px;';
+					console.log('font size', this.state.fontSize);
+					commandResult.className = 'normalCommand';
 					commandResult.innerHTML = _commands.commands[input];
 					// add element to the terminal window
 					el.append(commandResult);
 				}
 			} else {
 				// if command not recognized, return this 'error' statement
+				// commandResult.style.cssText = `font-size:${this.state.fontSize};`
+				commandResult.className = 'noCommandInput';
 				commandResult.innerHTML = '-bash: ' + input + ': command not found';
 				el.append(commandResult);
 			}
@@ -21108,7 +21118,7 @@ var App = function (_React$Component) {
 							_react2.default.createElement(
 								'div',
 								{ className: 'col-sm-3.5 terminalOwnerName' },
-								'Eric-Fannings-MacBook:~ EFanning$ '
+								this.state.ownerText
 							),
 							_react2.default.createElement(
 								'div',
@@ -21116,7 +21126,7 @@ var App = function (_React$Component) {
 								_react2.default.createElement(
 									'form',
 									{ onSubmit: this.enterPressed.bind(this) },
-									_react2.default.createElement('input', { style: { fontFamily: "Courier New" }, name: 'commandLineInput', autoFocus: 'autoFocus' })
+									!this.state.isMobile ? _react2.default.createElement('input', { style: { fontFamily: "Courier New" }, name: 'commandLineInput', autoFocus: 'autoFocus' }) : _react2.default.createElement('input', { style: { fontFamily: "Courier New", fontSize: "13px" }, name: 'commandLineInput', autoFocus: 'autoFocus' })
 								)
 							)
 						)
