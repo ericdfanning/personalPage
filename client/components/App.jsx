@@ -29,19 +29,19 @@ class App extends React.Component {
     }
 	}
 
-	// componentDidMount() {
-	// 	setTimeout(() => {
-	// 		return alert('type "help" for a list of commands')
-	// 	}, 3000)
-	// }
+	componentDidMount() { // if someone ends up on this page and is lost, this prompts them with help
+		setTimeout(() => {
+			return alert('type "help" for a list of commands')
+		}, 4000)
+	}
 
-	renderTextBox() {
+	renderCommandLine() {
 		const mobileTag = <input style={{fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus"/>
 		const desktopTag = <input style={{fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus"/>
 		return this.state.isMobile ? mobileTag: desktopTag;
 	}
 
-	yesNo(e) {
+	yesNo(e) { // this function handles the special prompt response from the user, then returns the terminal to normal
 		e.preventDefault()
 		let input = e.target.commandLineInput.value
 		let el = document.getElementById('terminalBody')
@@ -53,15 +53,14 @@ class App extends React.Component {
 			el.append(div)
 			this.setState({intruderAlert: false})
 		} else {
-			let div = 'You are denied access to hidden files.'
+			let div = 'You are denied access to hidden files until you can answer \'yes\'.'
 			intruderEl.innerHTML = ''
 			el.append(div)
 			this.setState({intruderAlert: false})
 		}
 	}
 
-	intruderProtocol() {
-
+	renderIntruderProtocol() {
 		return (
 			<div className="normalCommand" id="intruderProtocol">
 			  <div>Hello, Eric!</div>
@@ -72,7 +71,7 @@ class App extends React.Component {
 						<div className="col-sm-3.5">Q: This is Eric, right? (yes/no) :</div>
 						<div className="col-sm-8.5">
 						 <form onSubmit={this.yesNo.bind(this)}>
-							  {this.renderTextBox()}
+							  {this.renderCommandLine()}
 						  </form>
 						</div>
 					</div>
@@ -83,29 +82,38 @@ class App extends React.Component {
 
 	enterPressed(e) {
 		e.preventDefault()
+		// set command line input to a variable
+		let input = e.target.commandLineInput.value
+
 		// below is my way of having the input field always be focused at the bottom
 		//set local var 'finished' to track synchronous run time. 
 		var finished = false;
-		// remove input field. Since setState is async, check local var once done 
-		  // put the input field back into html if local code is done running. 
+
+		// remove command line so that command results can be appended. 
+		  // Since setState is async, check local var once aysnc is finished.
+		  // Then put the command line back into html if local code is done running. 
 		this.setState({showCommandLineInput: false}, () => {
-			finished === true ? this.setState({showCommandLineInput: true}): setTimeout(()=>{this.setState({showCommandLineInput: true})}, 500)
+			// If for some reason the synchronous run time is delayed, a timer is set to re-render with the command line inserted back in.
+			finished === true ? this.setState({showCommandLineInput: true}): setTimeout(()=>{this.setState({showCommandLineInput: true})}, 1000)
 		})
-		let input = e.target.commandLineInput.value
 
+		// get the html element I will be manipulating and appending things to. I use the id to get it. 
 		var el = document.getElementById('terminalBody')
-		var cl = document.getElementById('commandLine')
-		cl.innerHTML = ''
 
+		// The creates the fixed computer/user name that shows to the left of the command line.
+		  // this part inparticular creates the same text but shows it as the last command that was input. 
 		let terminalOwnerElement = document.createElement('div');
 		terminalOwnerElement.innerHTML = this.state.ownerText + input
 		el.append(terminalOwnerElement)
+		// clear the command line of its text
 		e.target.commandLineInput.value = ''
 
- 		// create element to insert into the terminal window
+ 		// create element to insert into the terminal window as the response/result of the command
 		let commandResult = document.createElement('div');
-
+ 
+ 		// first if block handles all normal valid requests
 		if (commands[input.toUpperCase()]) {
+			// Special case for HELP prompt to display different command options
 			if (input.toUpperCase() === 'HELP') {
 				for (let i = 0; i < commands.HELP.length; i++) {
 					let commandResultHelp = document.createElement('div');
@@ -114,7 +122,7 @@ class App extends React.Component {
 					commandResultHelp.innerHTML = commands.HELP[i]
 					el.append(commandResultHelp)
 				}
-			} else {
+			} else { // Here I handle all normal valid commands that are not HELP or HELLO
 				// set top and bottom margin for readability for commands with returned info
 				commandResult.className = 'normalCommand allInput'
 				commandResult.innerHTML = commands[input.toUpperCase()]
@@ -122,21 +130,24 @@ class App extends React.Component {
 				el.append(commandResult)
 		  }
 
-		} else if (input === 'clear()') {
+		} else if (input === 'clear()') { // clears all text from the screen and starts over. Clean slate.
+			// In order to achieve this and overcome a bug, I removed the command line,
+			  // cleared all command results and text, then inserted the command line back in.
 			this.setState({showCommandLineInput: false}, () => {
 			  el.innerHTML = ''
 				this.setState({showCommandLineInput: true})
 			})
-		} else if (input.toUpperCase() === 'HELLO') {
-
-			this.setState({intruderAlert: true}, () => this.intruderProtocol())
+		} else if (input.toUpperCase() === 'HELLO') { // Hello creates a special prompt with a fake/pathetic security question
+			// render special prompt html to handle the hello event
+			this.setState({intruderAlert: true}, () => this.renderIntruderProtocol())
 		} else {
-			// if command not recognized, return 'error' statement
+			// Any other commands that are not recognized returns an 'error' statement
 			commandResult.className = 'noCommandInput allInput'
 			commandResult.innerHTML = '-bash: ' + input + ': command not found'
 			el.append(commandResult)
 		}
-		finished = true
+
+		finished = true // the variable used at the top of this function to handle showing the command line
 	}
 
 	renderCommandLine() {
@@ -147,7 +158,7 @@ class App extends React.Component {
 						<div className="col-sm-3.5 terminalOwnerName">{this.state.ownerText}</div>
 						<div className="col-sm-8.5 commandLineInput">
 							<form onSubmit={this.enterPressed.bind(this)}>
-								{this.renderTextBox()}
+								{this.renderCommandLine()}
 							</form>
 						</div>
 					</div>
@@ -160,7 +171,7 @@ class App extends React.Component {
 		return (
 			<div id="mainBody" className="mainBody">
 			  <div id="terminalBody">
-				  {this.state.intruderAlert && this.intruderProtocol()}
+				  {this.state.intruderAlert && this.renderIntruderProtocol()}
 
 				  {!this.state.intruderAlert && this.state.showCommandLineInput &&
 				  	this.renderCommandLine()
