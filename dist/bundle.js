@@ -21221,7 +21221,7 @@ var App = function (_React$Component) {
 					// set top and bottom margin for readability for commands with returned info
 					commandResult.className = 'normalCommand allInput';
 					commandResult.innerHTML = _commands.commands[input.toUpperCase()];
-					// add element to the terminal window
+					// add element to the terminal window 
 					el.append(commandResult);
 				}
 			} else if (input === 'clear()') {

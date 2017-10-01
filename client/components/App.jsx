@@ -126,7 +126,7 @@ class App extends React.Component {
 				// set top and bottom margin for readability for commands with returned info
 				commandResult.className = 'normalCommand allInput'
 				commandResult.innerHTML = commands[input.toUpperCase()]
-				// add element to the terminal window
+				// add element to the terminal window 
 				el.append(commandResult)
 		  }
 
