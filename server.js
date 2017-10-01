@@ -35,4 +35,10 @@ app.get('/', function(req, res) {
   res.send()
 })
 
+app.get('*', function(req, res) {
+	var url = req.url.split('//')
+	var path = 'http://' + url[1]
+	res.redirect(path)
+})
+
 
