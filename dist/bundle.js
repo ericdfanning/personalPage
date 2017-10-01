@@ -20007,9 +20007,9 @@ var commands = exports.commands = {
 
 	WHATAMI: 'A Software Engineer who loves creative and efficient problem solving!',
 
-	ABOUT: 'I\'m a software engineer! Simply put, I love to code. I love exploring new ideas and honing my skills.<br>' + 'Creative and efficient solutions are what I strive for and clean, easy to reason about code is just plain beautiful.<br>' + 'There\'s more to me than just software engineering.<br>' + 'I have a small ego and a big heart, with a love for helping others, which I had the privilege of doing in my last line of work.(See \'workHistory\')<br>' + 'I love teamwork and thrive in its environment. But, can I work alone? Absolutely.<br>' + 'I\'m a self starter. I have to be working on something and progressing forward.<br><br>' + 'TL;DR I\'m an easy to work with, passionate, hard working software engineer. I enjoy other stuff too. See \'hobbies\'<br><br>' + '<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>' + '<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>',
+	ABOUT: 'Simply put, I love to code. I love exploring new ideas and honing my skills.<br>' + 'Creative and efficient solutions are what I strive for and clean, easy to reason about code is just plain beautiful.<br>' + 'There\'s more to me than just software engineering.<br>' + 'I have a small ego and a big heart, with a love for helping others, which I had the privilege of doing in my last line of work.(See \'workHistory\')<br>' + 'I love teamwork and thrive in its environment. But, can I work alone? Absolutely.<br>' + 'I\'m a self starter. I have to be working on something and progressing forward.<br><br>' + 'TL;DR I\'m an easy to work with, passionate, hard working software engineer. I enjoy other stuff too. See \'hobbies\'',
 
-	WORKHISTORY: 'Racine Police Department: \u200BPolice\u200B \u200BOfficer\u200B \u200B-\u200B \u200BRacine,\u200B \u200BWI 2010-2016<br> I utilized\u200B \u200Bcritical\u200B \u200Bthinking,\u200B \u200Bproblem\u200B \u200Bsolving,\u200B \u200Band\u200B \u200Bcommunication\u200B \u200Bskills\u200B \u200Bin\u200B \u200Bhigh\n    stress\u200B \u200Benvironments\u200B \u200Bwith\u200B \u200Ba\u200B \u200Bteam\u200B \u200Bto\u200B \u200Bserve\u200B \u200Ba\u200B \u200Bdiverse\u200B \u200Bcommunity\u200B \u200Bof\u200B \u200Bpeople.<br><br>' + '\u200BExploreUSA RV Supercenter: \u200BSales\u200B \u200B&\u200B \u200BFinance\u200B \u200BRepresentative\u200B \u200B-\u200B \u200BKyle,\u200B \u200BTX 2017<br> I provided\u200B \u200BRV\u200B \u200Bknowledge\u200B \u200Bto\u200B \u200Bcustomers\u200B \u200Bwhile\u200B \u200Blistening\u200B \u200Bto\u200B \u200Btheir\u200B \u200Bneeds\u200B \u200Bto\u200B \u200Bdeliver\u200B \u200Bthe\nright\u200B \u200Bproduct\u200B \u200Band\u200B \u200Bthe\u200B \u200Bbest\u200B \u200Bfinancing\u200B \u200Boptions\u200B \u200Bavailable\u200B \u200Bto\u200B \u200Bmake\u200B \u200Bit\u200B \u200Bhappen.',
+	WORKHISTORY: 'Racine Police Department: \u200BPolice\u200B \u200BOfficer\u200B \u200B-\u200B \u200BRacine,\u200B \u200BWI 2010-2016<br> I utilized\u200B \u200Bcritical\u200B \u200Bthinking,\u200B \u200Bproblem\u200B \u200Bsolving,\u200B \u200Band\u200B \u200Bcommunication\u200B \u200Bskills\u200B \u200Bin\u200B \u200Bhigh\n    stress\u200B \u200Benvironments\u200B \u200Bwith\u200B \u200Ba\u200B \u200Bteam\u200B \u200Bto\u200B \u200Bserve\u200B \u200Ba\u200B \u200Bdiverse\u200B \u200Bcommunity\u200B \u200Bof\u200B \u200Bpeople.<br><br>' + '\u200BExploreUSA RV Supercenter: \u200BSales\u200B \u200B&\u200B \u200BFinance\u200B \u200BRepresentative\u200B \u200B-\u200B \u200BKyle,\u200B \u200BTX 2017<br> I provided\u200B \u200BRV\u200B \u200Bknowledge\u200B \u200Bto\u200B \u200Bcustomers\u200B \u200Bwhile\u200B \u200Blistening\u200B \u200Bto\u200B \u200Btheir\u200B \u200Bneeds\u200B \u200Bto\u200B \u200Bdeliver\u200B \u200Bthe\n     right\u200B \u200Bproduct\u200B \u200Band\u200B \u200Bthe\u200B \u200Bbest\u200B \u200Bfinancing\u200B \u200Boptions\u200B \u200Bavailable\u200B \u200Bto\u200B \u200Bmake\u200B \u200Bit\u200B \u200Bhappen.',
 
 	EDUCATION: '\u200BHack Reactor\u200B: 2017 <br> Advanced\u200B \u200BSoftware\u200B \u200BEngineering\u200B \u200BImmersive<br><br>' + '\u200BUniversity of Wisconsin Parkside\u200B: 2009 \u200B<br> Bachelor\u200B \u200Bof\u200B \u200BArts\u200B \u200Bin\u200B \u200BCriminal\u200B \u200BJustice',
 
@@ -20021,11 +20021,13 @@ var commands = exports.commands = {
 
 	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), riding my bicyle, food!, and trying new things.',
 
-	MYAPPS: 'Most Recent: <br><br> Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>' + 'LifeTime Capsule <a href="http://github.com/ericdfanning/LifetimeCapsule" target="_blank">github.com/ericdfanning/LifetimeCapsule</a><br><br>' + 'Bair Data <a href="http://thebairdata.com" target="_blank">thebairdata.com</a><br><br>' + 'And others...not deployed. For others, type \'otherApps\' <br><br> For app description: \'description APP_NAME\'',
+	MYAPPS: 'Most Recent: <br><br> Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>' + 'LifeTime Capsule <a href="http://github.com/ericdfanning/LifetimeCapsule" target="_blank">github.com/ericdfanning/LifetimeCapsule</a><br><br>' + 'Bair Data <a href="http://thebairdata.com" target="_blank">thebairdata.com</a><br><br>' + 'For app description: \'description APP_NAME\'<br><br> For other apps not deployed, type \'otherApps\'',
 
 	OTHERAPPS: '10-43: <br> A \u200Bmobile\u200B \u200Bapp\u200B \u200Ballowing\u200B \u200Bsearchable\u200B \u200Bwork-related\u200B \u200Bdata\u200B \u200Busing\u200B \u200BParse\u200B Cloud \u200Bstorage\u200B \u200Band CoreData\u200B \u200Bin\u200B \u200BSwift.<br><br>' + 'Easy Budget:\u200B \u200BCreator | A mobile\u200B \u200Bbudget\u200B \u200Bapp\u200B, implemented\u200B \u200Bwith Parse cloud\u200B \u200Bstorage\u200B, \u200Bfor\u200B \u200Bsimple\u200B \u200Bbudget keeping\u200B in \u200BSwift.<br><br>' + 'Price Compare:\u200B Creator | A \u200BSwift\u200B \u200Bmobile\u200B \u200Bapp\u200B \u200Bto\u200B \u200Bkeep\u200B \u200Btrack\u200B \u200Bof\u200B \u200Bprices\u200B \u200Bacross\u200B \u200Bdifferent grocery stores\u200B \u200Busing\u200B \u200BCoreData.<br><br>' + 'Concreet Cal:\u200B \u200BFront End | An \u200Bintuitive\u200B \u200BUI\u200B \u200Bfor\u200B \u200Bcalendar\u200B \u200Bevent\u200B \u200Bediting\u200B \u200Bvia\u200B \u200Bdynamic\u200B \u200BReact modals\u200B \u200Bconnected \u200Bto\u200B \u200BGoogle\u2019s\u200B \u200Bcalendar\u200B \u200BAPI.<br><a href="\u200Bhttp://github.com/ericdfanning/concreet-legacy" target="_blank">Open in GitHub</a><br><br>' + 'ODIGAT Tat:\u200B \u200BFull-Stack\u200B \u200B|\u200B \u200BA simple \u200Bsingle-page\u200B \u200BMERN\u200B \u200Bapp\u200B to\u200B \u200Bshare\u200B \u200Band\u200B \u200Bkeep track of tattoo\u200B \u200Bideas.<br><a href="\u200Bhttp://github.com/ericdfanning/hratx28-mvp" target="_blank">Open in GitHub</a><br><br>',
 
 	RESUME: 'click -> <a href="/resume" target="_blank"> MyResume.pdf </a>',
+
+	LINKS: '<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>' + '<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>',
 
 	"DESCRIPTION RENTOPIA": "A​ ​better​ ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.",
 
@@ -20035,13 +20037,15 @@ var commands = exports.commands = {
 
 	OTHER: 'somethingNooneKnows <br> biggestPetPeeve <br> hobbies <br> clear()',
 
-	HELP: ['Try these commands: ', 'whoami', 'whatami', 'about', 'resume', 'workHistory', 'education', 'myApps', 'contactInfo', 'other'],
+	CLEAR: 'Did you mean \'clear()\'?',
+
+	HELP: ['Try these commands: ', 'whoami', 'whatami', 'about', 'resume', 'workHistory', 'education', 'myApps', 'contactInfo', 'links', 'other'],
 
 	// EASTER EGGS
 	LPB: '<img src="/lpb"></img>',
 	HENRYETTA: 'Lina is obbessed with this mystical coding creature.',
 	JOHNCENA: '<img src="https://media.giphy.com/media/Vzku9jyuef09G/giphy.gif"></img>',
-	WHYAREMYPARENTSDISSAPPOINTEDINME: 'BECAUSE YOU\'RE GARBAGE!! <br> <img src="http://brightcove04.o.brightcove.com/4244402466001/4244402466001_4758945394001_4524423608001-vs.jpg?pubId=4244402466001&videoId=4524423608001"></img>',
+	WHYAREMYPARENTSDISSAPPOINTEDINME: 'BECAUSE I\'M GARBAGE!! <br> <img src="http://brightcove04.o.brightcove.com/4244402466001/4244402466001_4758945394001_4524423608001-vs.jpg?pubId=4244402466001&videoId=4524423608001"></img>',
 	"NPM INSTALL GARBAGE": '<img src="https://media.giphy.com/media/yPD4GW3iSCaFW/giphy.gif"></img>',
 	HOWNEAT: 'Pretty neat!',
 	HOWNEATISTHAT: '<img src="https://media.giphy.com/media/7s45XYHzHCUpO/giphy.gif"></img>',
@@ -21087,13 +21091,14 @@ var App = function (_React$Component) {
 				this.setState({ isMobile: false });
 			}
 		}
-
-		// componentDidMount() { // in case someone doesn't know where to start, this delayed alert box gives them some help.
-		// 	setTimeout(() => {
-		// 		return alert('type "help" for a list of commands')
-		// 	}, 3000)
-		// }
-
+	}, {
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			// in case someone doesn't know where to start, this delayed alert box gives them some help.
+			setTimeout(function () {
+				return alert('type "help" for a list of commands');
+			}, 3000);
+		}
 	}, {
 		key: 'renderCommandLineTextArea',
 		value: function renderCommandLineTextArea() {
