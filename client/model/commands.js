@@ -4,12 +4,12 @@ export const commands = {
 	WHATAMI: 'A Software Engineer who loves creative and efficient problem solving!',
 
 	ABOUT: `I\'m a software engineer! Simply put, I love to code. I love exploring new ideas and honing my skills.<br>` +
-	  `Creative and efficient solutions are what I strive for and clean, easy to reason about code, is just plain beautiful.<br>` +
+	  `Creative and efficient solutions are what I strive for and clean, easy to reason about code is just plain beautiful.<br>` +
 	  `There's more to me than just software engineering.<br>` +
-	  `I have a small ego and a big heart, with a love for helping others. Which I had the privilege of doing in my last line of work.(See 'workHistory')<br>` +
-	  `I love teamwork and thrive in it's environment. But, can I work alone? Absolutely.<br>` +
+	  `I have a small ego and a big heart, with a love for helping others, which I had the privilege of doing in my last line of work.(See 'workHistory')<br>` +
+	  `I love teamwork and thrive in its environment. But, can I work alone? Absolutely.<br>` +
 	  `I'm a self starter. I have to be working on something and progressing forward.<br><br>` +
-	  `TL;DR I'm easy to work with, passionate, hard working software engineer. I enjoy other stuff too. See 'hobbies'<br><br>` +
+	  `TL;DR I'm an easy to work with, passionate, hard working software engineer. I enjoy other stuff too. See 'hobbies'<br><br>` +
 		`<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>` +
 		`<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>`,
 
@@ -25,7 +25,7 @@ right​ ​product​ ​and​ ​the​ ​best​ ​financing​ ​options
 
 	BIGGESTPETPEEVE: 'Bad drivers?',
 
-	SOMETHINGNOONEKNOWS: 'I cried during a Disney movie',
+	SOMETHINGNOONEKNOWS: 'I cried during a Disney movie. #notashamed',
 
 	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), riding my bicyle, food!, and trying new things.',
 

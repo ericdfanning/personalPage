@@ -20007,7 +20007,7 @@ var commands = exports.commands = {
 
 	WHATAMI: 'A Software Engineer who loves creative and efficient problem solving!',
 
-	ABOUT: 'I\'m a software engineer! Simply put, I love to code. I love exploring new ideas and honing my skills.<br>' + 'Creative and efficient solutions are what I strive for and clean, easy to reason about code, is just plain beautiful.<br>' + 'There\'s more to me than just software engineering.<br>' + 'I have a small ego and a big heart, with a love for helping others. Which I had the privilege of doing in my last line of work.(See \'workHistory\')<br>' + 'I love teamwork and thrive in it\'s environment. But, can I work alone? Absolutely.<br>' + 'I\'m a self starter. I have to be working on something and progressing forward.<br><br>' + 'TL;DR I\'m easy to work with, passionate, hard working software engineer. I enjoy other stuff too. See \'hobbies\'<br><br>' + '<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>' + '<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>',
+	ABOUT: 'I\'m a software engineer! Simply put, I love to code. I love exploring new ideas and honing my skills.<br>' + 'Creative and efficient solutions are what I strive for and clean, easy to reason about code is just plain beautiful.<br>' + 'There\'s more to me than just software engineering.<br>' + 'I have a small ego and a big heart, with a love for helping others, which I had the privilege of doing in my last line of work.(See \'workHistory\')<br>' + 'I love teamwork and thrive in its environment. But, can I work alone? Absolutely.<br>' + 'I\'m a self starter. I have to be working on something and progressing forward.<br><br>' + 'TL;DR I\'m an easy to work with, passionate, hard working software engineer. I enjoy other stuff too. See \'hobbies\'<br><br>' + '<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>' + '<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>',
 
 	WORKHISTORY: 'Racine Police Department: \u200BPolice\u200B \u200BOfficer\u200B \u200B-\u200B \u200BRacine,\u200B \u200BWI 2010-2016<br> I utilized\u200B \u200Bcritical\u200B \u200Bthinking,\u200B \u200Bproblem\u200B \u200Bsolving,\u200B \u200Band\u200B \u200Bcommunication\u200B \u200Bskills\u200B \u200Bin\u200B \u200Bhigh\n    stress\u200B \u200Benvironments\u200B \u200Bwith\u200B \u200Ba\u200B \u200Bteam\u200B \u200Bto\u200B \u200Bserve\u200B \u200Ba\u200B \u200Bdiverse\u200B \u200Bcommunity\u200B \u200Bof\u200B \u200Bpeople.<br><br>' + '\u200BExploreUSA RV Supercenter: \u200BSales\u200B \u200B&\u200B \u200BFinance\u200B \u200BRepresentative\u200B \u200B-\u200B \u200BKyle,\u200B \u200BTX 2017<br> I provided\u200B \u200BRV\u200B \u200Bknowledge\u200B \u200Bto\u200B \u200Bcustomers\u200B \u200Bwhile\u200B \u200Blistening\u200B \u200Bto\u200B \u200Btheir\u200B \u200Bneeds\u200B \u200Bto\u200B \u200Bdeliver\u200B \u200Bthe\nright\u200B \u200Bproduct\u200B \u200Band\u200B \u200Bthe\u200B \u200Bbest\u200B \u200Bfinancing\u200B \u200Boptions\u200B \u200Bavailable\u200B \u200Bto\u200B \u200Bmake\u200B \u200Bit\u200B \u200Bhappen.',
 
@@ -20017,7 +20017,7 @@ var commands = exports.commands = {
 
 	BIGGESTPETPEEVE: 'Bad drivers?',
 
-	SOMETHINGNOONEKNOWS: 'I cried during a Disney movie',
+	SOMETHINGNOONEKNOWS: 'I cried during a Disney movie. #notashamed',
 
 	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), riding my bicyle, food!, and trying new things.',
 
@@ -21087,16 +21087,17 @@ var App = function (_React$Component) {
 				this.setState({ isMobile: false });
 			}
 		}
-
-		// componentDidMount() {
-		// 	setTimeout(() => {
-		// 		return alert('type "help" for a list of commands')
-		// 	}, 3000)
-		// }
-
 	}, {
-		key: 'renderTextBox',
-		value: function renderTextBox() {
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			// if someone ends up on this page and is lost, this prompts them with help
+			setTimeout(function () {
+				return alert('type "help" for a list of commands');
+			}, 4000);
+		}
+	}, {
+		key: 'renderCommandLine',
+		value: function renderCommandLine() {
 			var mobileTag = _react2.default.createElement('input', { style: { fontFamily: "Courier New", fontSize: "13px" }, name: 'commandLineInput', autoFocus: 'autoFocus' });
 			var desktopTag = _react2.default.createElement('input', { style: { fontFamily: "Courier New" }, name: 'commandLineInput', autoFocus: 'autoFocus' });
 			return this.state.isMobile ? mobileTag : desktopTag;
@@ -21104,6 +21105,7 @@ var App = function (_React$Component) {
 	}, {
 		key: 'yesNo',
 		value: function yesNo(e) {
+			// this function handles the special prompt response from the user, then returns the terminal to normal
 			e.preventDefault();
 			var input = e.target.commandLineInput.value;
 			var el = document.getElementById('terminalBody');
@@ -21115,16 +21117,15 @@ var App = function (_React$Component) {
 				el.append(div);
 				this.setState({ intruderAlert: false });
 			} else {
-				var _div = 'You are denied access to hidden files.';
+				var _div = 'You are denied access to hidden files until you can answer \'yes\'.';
 				intruderEl.innerHTML = '';
 				el.append(_div);
 				this.setState({ intruderAlert: false });
 			}
 		}
 	}, {
-		key: 'intruderProtocol',
-		value: function intruderProtocol() {
-
+		key: 'renderIntruderProtocol',
+		value: function renderIntruderProtocol() {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'normalCommand', id: 'intruderProtocol' },
@@ -21160,7 +21161,7 @@ var App = function (_React$Component) {
 							_react2.default.createElement(
 								'form',
 								{ onSubmit: this.yesNo.bind(this) },
-								this.renderTextBox()
+								this.renderCommandLine()
 							)
 						)
 					)
@@ -21173,31 +21174,40 @@ var App = function (_React$Component) {
 			var _this2 = this;
 
 			e.preventDefault();
+			// set command line input to a variable
+			var input = e.target.commandLineInput.value;
+
 			// below is my way of having the input field always be focused at the bottom
 			//set local var 'finished' to track synchronous run time. 
 			var finished = false;
-			// remove input field. Since setState is async, check local var once done 
-			// put the input field back into html if local code is done running. 
+
+			// remove command line so that command results can be appended. 
+			// Since setState is async, check local var once aysnc is finished.
+			// Then put the command line back into html if local code is done running. 
 			this.setState({ showCommandLineInput: false }, function () {
+				// If for some reason the synchronous run time is delayed, a timer is set to re-render with the command line inserted back in.
 				finished === true ? _this2.setState({ showCommandLineInput: true }) : setTimeout(function () {
 					_this2.setState({ showCommandLineInput: true });
-				}, 500);
+				}, 1000);
 			});
-			var input = e.target.commandLineInput.value;
 
+			// get the html element I will be manipulating and appending things to. I use the id to get it. 
 			var el = document.getElementById('terminalBody');
-			var cl = document.getElementById('commandLine');
-			cl.innerHTML = '';
 
+			// The creates the fixed computer/user name that shows to the left of the command line.
+			// this part inparticular creates the same text but shows it as the last command that was input. 
 			var terminalOwnerElement = document.createElement('div');
 			terminalOwnerElement.innerHTML = this.state.ownerText + input;
 			el.append(terminalOwnerElement);
+			// clear the command line of its text
 			e.target.commandLineInput.value = '';
 
-			// create element to insert into the terminal window
+			// create element to insert into the terminal window as the response/result of the command
 			var commandResult = document.createElement('div');
 
+			// first if block handles all normal valid requests
 			if (_commands.commands[input.toUpperCase()]) {
+				// Special case for HELP prompt to display different command options
 				if (input.toUpperCase() === 'HELP') {
 					for (var i = 0; i < _commands.commands.HELP.length; i++) {
 						var commandResultHelp = document.createElement('div');
@@ -21207,29 +21217,35 @@ var App = function (_React$Component) {
 						el.append(commandResultHelp);
 					}
 				} else {
+					// Here I handle all normal valid commands that are not HELP or HELLO
 					// set top and bottom margin for readability for commands with returned info
 					commandResult.className = 'normalCommand allInput';
 					commandResult.innerHTML = _commands.commands[input.toUpperCase()];
-					// add element to the terminal window
+					// add element to the terminal window 
 					el.append(commandResult);
 				}
 			} else if (input === 'clear()') {
+				// clears all text from the screen and starts over. Clean slate.
+				// In order to achieve this and overcome a bug, I removed the command line,
+				// cleared all command results and text, then inserted the command line back in.
 				this.setState({ showCommandLineInput: false }, function () {
 					el.innerHTML = '';
 					_this2.setState({ showCommandLineInput: true });
 				});
 			} else if (input.toUpperCase() === 'HELLO') {
-
+				// Hello creates a special prompt with a fake/pathetic security question
+				// render special prompt html to handle the hello event
 				this.setState({ intruderAlert: true }, function () {
-					return _this2.intruderProtocol();
+					return _this2.renderIntruderProtocol();
 				});
 			} else {
-				// if command not recognized, return 'error' statement
+				// Any other commands that are not recognized returns an 'error' statement
 				commandResult.className = 'noCommandInput allInput';
 				commandResult.innerHTML = '-bash: ' + input + ': command not found';
 				el.append(commandResult);
 			}
-			finished = true;
+
+			finished = true; // the variable used at the top of this function to handle showing the command line
 		}
 	}, {
 		key: 'renderCommandLine',
@@ -21254,7 +21270,7 @@ var App = function (_React$Component) {
 							_react2.default.createElement(
 								'form',
 								{ onSubmit: this.enterPressed.bind(this) },
-								this.renderTextBox()
+								this.renderCommandLine()
 							)
 						)
 					)
@@ -21270,7 +21286,7 @@ var App = function (_React$Component) {
 				_react2.default.createElement(
 					'div',
 					{ id: 'terminalBody' },
-					this.state.intruderAlert && this.intruderProtocol(),
+					this.state.intruderAlert && this.renderIntruderProtocol(),
 					!this.state.intruderAlert && this.state.showCommandLineInput && this.renderCommandLine()
 				)
 			);
