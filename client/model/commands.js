@@ -41,7 +41,7 @@ right​ ​product​ ​and​ ​the​ ​best​ ​financing​ ​options
 	  `Concreet Cal:​ ​Front End | An ​intuitive​ ​UI​ ​for​ ​calendar​ ​event​ ​editing​ ​via​ ​dynamic​ ​React modals​ ​connected ​to​ ​Google’s​ ​calendar​ ​API.<br><a href="​http://github.com/ericdfanning/concreet-legacy" target="_blank">Open in GitHub</a><br><br>` +
 	  `ODIGAT Tat:​ ​Full-Stack​ ​|​ ​A simple ​single-page​ ​MERN​ ​app​ to​ ​share​ ​and​ ​keep track of tattoo​ ​ideas.<br><a href="​http://github.com/ericdfanning/hratx28-mvp" target="_blank">Open in GitHub</a><br><br>`,
 
-	RESUME: `<a href="/resume" target="_blank"> MyResume.pdf </a>`,
+	RESUME: `click -> <a href="/resume" target="_blank"> MyResume.pdf </a>`,
 
 	"DESCRIPTION RENTOPIA": "A​ ​better​ ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.",
 

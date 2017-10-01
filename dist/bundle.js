@@ -20025,7 +20025,7 @@ var commands = exports.commands = {
 
 	OTHERAPPS: '10-43: <br> A \u200Bmobile\u200B \u200Bapp\u200B \u200Ballowing\u200B \u200Bsearchable\u200B \u200Bwork-related\u200B \u200Bdata\u200B \u200Busing\u200B \u200BParse\u200B Cloud \u200Bstorage\u200B \u200Band CoreData\u200B \u200Bin\u200B \u200BSwift.<br><br>' + 'Easy Budget:\u200B \u200BCreator | A mobile\u200B \u200Bbudget\u200B \u200Bapp\u200B, implemented\u200B \u200Bwith Parse cloud\u200B \u200Bstorage\u200B, \u200Bfor\u200B \u200Bsimple\u200B \u200Bbudget keeping\u200B in \u200BSwift.<br><br>' + 'Price Compare:\u200B Creator | A \u200BSwift\u200B \u200Bmobile\u200B \u200Bapp\u200B \u200Bto\u200B \u200Bkeep\u200B \u200Btrack\u200B \u200Bof\u200B \u200Bprices\u200B \u200Bacross\u200B \u200Bdifferent grocery stores\u200B \u200Busing\u200B \u200BCoreData.<br><br>' + 'Concreet Cal:\u200B \u200BFront End | An \u200Bintuitive\u200B \u200BUI\u200B \u200Bfor\u200B \u200Bcalendar\u200B \u200Bevent\u200B \u200Bediting\u200B \u200Bvia\u200B \u200Bdynamic\u200B \u200BReact modals\u200B \u200Bconnected \u200Bto\u200B \u200BGoogle\u2019s\u200B \u200Bcalendar\u200B \u200BAPI.<br><a href="\u200Bhttp://github.com/ericdfanning/concreet-legacy" target="_blank">Open in GitHub</a><br><br>' + 'ODIGAT Tat:\u200B \u200BFull-Stack\u200B \u200B|\u200B \u200BA simple \u200Bsingle-page\u200B \u200BMERN\u200B \u200Bapp\u200B to\u200B \u200Bshare\u200B \u200Band\u200B \u200Bkeep track of tattoo\u200B \u200Bideas.<br><a href="\u200Bhttp://github.com/ericdfanning/hratx28-mvp" target="_blank">Open in GitHub</a><br><br>',
 
-	RESUME: '<a href="/resume" target="_blank"> MyResume.pdf </a>',
+	RESUME: 'click -> <a href="/resume" target="_blank"> MyResume.pdf </a>',
 
 	"DESCRIPTION RENTOPIA": "A​ ​better​ ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.",
 
@@ -21081,23 +21081,22 @@ var App = function (_React$Component) {
 			    g = d.getElementsByTagName('body')[0],
 			    x = w.innerWidth || e.clientWidth || g.clientWidth,
 			    y = w.innerHeight || e.clientHeight || g.clientHeight;
-			if (x < 481) {
+			if (x <= 768) {
 				this.setState({ isMobile: true, ownerText: 'EFannings-Mac:~ $ ' });
 			} else {
 				this.setState({ isMobile: false });
 			}
 		}
+
+		// componentDidMount() { // in case someone doesn't know where to start, this delayed alert box gives them some help.
+		// 	setTimeout(() => {
+		// 		return alert('type "help" for a list of commands')
+		// 	}, 3000)
+		// }
+
 	}, {
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			// if someone ends up on this page and is lost, this prompts them with help
-			setTimeout(function () {
-				return alert('type "help" for a list of commands');
-			}, 4000);
-		}
-	}, {
-		key: 'renderCommandLine',
-		value: function renderCommandLine() {
+		key: 'renderCommandLineTextArea',
+		value: function renderCommandLineTextArea() {
 			var mobileTag = _react2.default.createElement('input', { style: { fontFamily: "Courier New", fontSize: "13px" }, name: 'commandLineInput', autoFocus: 'autoFocus' });
 			var desktopTag = _react2.default.createElement('input', { style: { fontFamily: "Courier New" }, name: 'commandLineInput', autoFocus: 'autoFocus' });
 			return this.state.isMobile ? mobileTag : desktopTag;
@@ -21161,7 +21160,7 @@ var App = function (_React$Component) {
 							_react2.default.createElement(
 								'form',
 								{ onSubmit: this.yesNo.bind(this) },
-								this.renderCommandLine()
+								this.renderCommandLineTextArea()
 							)
 						)
 					)
@@ -21221,7 +21220,7 @@ var App = function (_React$Component) {
 					// set top and bottom margin for readability for commands with returned info
 					commandResult.className = 'normalCommand allInput';
 					commandResult.innerHTML = _commands.commands[input.toUpperCase()];
-					// add element to the terminal window 
+					// add element to the terminal window
 					el.append(commandResult);
 				}
 			} else if (input === 'clear()') {
@@ -21270,7 +21269,7 @@ var App = function (_React$Component) {
 							_react2.default.createElement(
 								'form',
 								{ onSubmit: this.enterPressed.bind(this) },
-								this.renderCommandLine()
+								this.renderCommandLineTextArea()
 							)
 						)
 					)
