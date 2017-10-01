@@ -8,6 +8,7 @@ class App extends React.Component {
 		this.state = {
  			isMobile: false,
  			intruderAlert: false,
+ 			showCommandLineInput: true,
  			ownerText: 'Eric-Fannings-MacBook:~ EFanning$ '
 		}
 	}
@@ -83,10 +84,19 @@ class App extends React.Component {
 
 	enterPressed(e) {
 		e.preventDefault()
-
+		// below is my way of having the input field always be focused at the bottom
+		//set local var 'finished' to track synchronous run time. 
+		var finished = false;
+		// remove input field. Since setState is async, check local var once done 
+		  // put the input field back into html if local code is done running. 
+		this.setState({showCommandLineInput: false}, () => {
+			finished === true ? this.setState({showCommandLineInput: true}): setTimeout(()=>{this.setState({showCommandLineInput: true})}, 500)
+		})
 		let input = e.target.commandLineInput.value
-		console.log('input from enterPressed ', input)
+
 		var el = document.getElementById('terminalBody')
+		var cl = document.getElementById('commandLine')
+		cl.innerHTML = ''
 
 		let terminalOwnerElement = document.createElement('div');
 		terminalOwnerElement.innerHTML = this.state.ownerText + input
@@ -100,53 +110,63 @@ class App extends React.Component {
 			if (input.toUpperCase() === 'HELP') {
 				for (let i = 0; i < commands.HELP.length; i++) {
 					let commandResultHelp = document.createElement('div');
-					commandResult.className = 'helpCommand'
+					commandResult.className = 'helpCommand allInput'
 					i === 0 ? commandResultHelp.style.cssText = 'margin-left:10px;': commandResultHelp.style.cssText = 'margin-left:25px;';
 					commandResultHelp.innerHTML = commands.HELP[i]
 					el.append(commandResultHelp)
 				}
 			} else {
 				// set top and bottom margin for readability for commands with returned info
-				commandResult.className = 'normalCommand'
+				commandResult.className = 'normalCommand allInput'
 				commandResult.innerHTML = commands[input.toUpperCase()]
 				// add element to the terminal window
 				el.append(commandResult)
 		  }
 
 		} else if (input === 'clear()') {
-			el.innerHTML = ''
+			this.setState({showCommandLineInput: false}, () => {
+			  el.innerHTML = ''
+				this.setState({showCommandLineInput: true})
+			})
 		} else if (input.toUpperCase() === 'HELLO') {
+
 			this.setState({intruderAlert: true}, () => this.intruderProtocol())
 		} else {
 			// if command not recognized, return 'error' statement
-			commandResult.className = 'noCommandInput'
+			commandResult.className = 'noCommandInput allInput'
 			commandResult.innerHTML = '-bash: ' + input + ': command not found'
 			el.append(commandResult)
 		}
-
+		finished = true
 	}
 
-	render () {
-		return (
-			<div className="mainBody">
-			  <div id="terminalBody">
-			  {this.state.intruderAlert && this.intruderProtocol()}
-			  </div>
-
-			  {!this.state.intruderAlert && 
-					<div className="commandLine">
-						<div className="container-fluid">
-						  <div className="row">
-								<div className="col-sm-3.5 terminalOwnerName">{this.state.ownerText}</div>
-								<div className="col-sm-8.5 commandLineInput">
-									<form onSubmit={this.enterPressed.bind(this)}>
-										{this.renderTextBox()}
-									</form>
-								</div>
-							</div>
+	renderCommandLine() {
+    return (
+			<div id="commandLine" className="commandLine">
+				<div className="container-fluid">
+				  <div className="row">
+						<div className="col-sm-3.5 terminalOwnerName">{this.state.ownerText}</div>
+						<div className="col-sm-8.5 commandLineInput">
+							<form onSubmit={this.enterPressed.bind(this)}>
+								{this.renderTextBox()}
+							</form>
 						</div>
 					</div>
-			  }
+				</div>
+			</div>
+		)
+	}
+
+	render() {
+		return (
+			<div id="mainBody" className="mainBody">
+			  <div id="terminalBody">
+				  {this.state.intruderAlert && this.intruderProtocol()}
+
+				  {!this.state.intruderAlert && this.state.showCommandLineInput &&
+				  	this.renderCommandLine()
+				  }
+				</div>
 			</div>
 		)
 	}
