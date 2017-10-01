@@ -1,7 +1,6 @@
 export const commands = {
 	WHOAMI: 'Eric Fanning',
 	WHATAMI: 'A Software Engineer who loves efficient problem solving creativity!',
-	HELLO: 'Hello, Eric!....This is Eric right?', // set up separate prompt here for y/n and to gather persons name. Set up email notification with deets
 	ABOUT: 'Im a software engineer!',
 	CONTACTINFO: `ericdfanning@gmail.com <br> (262) 237-2927`,
 	BIGGESTPETPEEVE: 'Bad drivers?',
@@ -18,5 +17,10 @@ export const commands = {
 	"DESCRIPTION LIFETIME CAPSULE": "Capture​ ​and​ ​save​ ​life’s​ ​moments​ ​through​ ​multimedia​ ​for​ ​you​ ​or​ ​the​ ​next​ ​generation.",
 	"DESCRIPTION BAIR DATA": "Bair​ ​Data​ ​crunches​ ​eBay​ ​sales​ ​data​ ​to​ ​show​ ​you​ ​top​ ​brands​ ​and​ ​items​ ​to​ ​improve market​ ​research​ ​for​ ​eBay​ ​resellers.",
 	OTHER: `description APP_NAME <br> somethingNooneKnows <br> biggestPetPeeve <br> hobbies <br> clear()`,
-	HELP: ['Try these commands: ', 'whoami', 'whatami', 'about', 'myApps', 'links', 'contactInfo', 'linkedin', 'other']
+	HELP: ['Try these commands: ', 'whoami', 'whatami', 'about', 'myApps', 'links', 'contactInfo', 'linkedin', 'other'],
+	LPB: `<img src="/lpb"></img>`,
+	"HOW NEAT?": 'Pretty neat!',
+	"EASTER EGG?":'Good luck guessing the commands! If you do, they\'re pretty neat!',
+	"EASTER EGG": 'Good luck guessing the commands! If you do, they\'re pretty neat!',
+	"EASTEREGG": 'Good luck guessing the commands! If you do, they\'re pretty neat!'
 }

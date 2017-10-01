@@ -25,6 +25,10 @@ app.get('/resume', function(req, res) {
 	res.sendFile(path.join(__dirname, './resume.pdf'))
 })
 
+app.get('/lpb', function(req, res) {
+	res.sendFile(path.join(__dirname, './lennypepperbottom.jpg'))
+})
+
 app.get('/', function(req, res) {
 
   res.status(200)

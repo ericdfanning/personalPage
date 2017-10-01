@@ -20005,7 +20005,6 @@ Object.defineProperty(exports, "__esModule", {
 var commands = exports.commands = {
 	WHOAMI: 'Eric Fanning',
 	WHATAMI: 'A Software Engineer who loves efficient problem solving creativity!',
-	HELLO: 'Hello, Eric!....This is Eric right?', // set up separate prompt here for y/n and to gather persons name. Set up email notification with deets
 	ABOUT: 'Im a software engineer!',
 	CONTACTINFO: 'ericdfanning@gmail.com <br> (262) 237-2927',
 	BIGGESTPETPEEVE: 'Bad drivers?',
@@ -20019,7 +20018,12 @@ var commands = exports.commands = {
 	"DESCRIPTION LIFETIME CAPSULE": "Capture​ ​and​ ​save​ ​life’s​ ​moments​ ​through​ ​multimedia​ ​for​ ​you​ ​or​ ​the​ ​next​ ​generation.",
 	"DESCRIPTION BAIR DATA": "Bair​ ​Data​ ​crunches​ ​eBay​ ​sales​ ​data​ ​to​ ​show​ ​you​ ​top​ ​brands​ ​and​ ​items​ ​to​ ​improve market​ ​research​ ​for​ ​eBay​ ​resellers.",
 	OTHER: 'description APP_NAME <br> somethingNooneKnows <br> biggestPetPeeve <br> hobbies <br> clear()',
-	HELP: ['Try these commands: ', 'whoami', 'whatami', 'about', 'myApps', 'links', 'contactInfo', 'linkedin', 'other']
+	HELP: ['Try these commands: ', 'whoami', 'whatami', 'about', 'myApps', 'links', 'contactInfo', 'linkedin', 'other'],
+	LPB: '<img src="/lpb"></img>',
+	"HOW NEAT?": 'Pretty neat!',
+	"EASTER EGG?": 'Good luck guessing the commands! If you do, they\'re pretty neat!',
+	"EASTER EGG": 'Good luck guessing the commands! If you do, they\'re pretty neat!',
+	"EASTEREGG": 'Good luck guessing the commands! If you do, they\'re pretty neat!'
 };
 
 /***/ }),
@@ -21036,6 +21040,7 @@ var App = function (_React$Component) {
 
 		_this.state = {
 			isMobile: false,
+			intruderAlert: false,
 			ownerText: 'Eric-Fannings-MacBook:~ EFanning$ '
 		};
 		return _this;
@@ -21065,13 +21070,87 @@ var App = function (_React$Component) {
 		// }
 
 	}, {
+		key: 'renderTextBox',
+		value: function renderTextBox() {
+			var mobileTag = _react2.default.createElement('input', { style: { fontFamily: "Courier New", fontSize: "13px" }, name: 'commandLineInput', autoFocus: 'autoFocus' });
+			var desktopTag = _react2.default.createElement('input', { style: { fontFamily: "Courier New" }, name: 'commandLineInput', autoFocus: 'autoFocus' });
+			return this.state.isMobile ? mobileTag : desktopTag;
+		}
+	}, {
+		key: 'yesNo',
+		value: function yesNo(e) {
+			e.preventDefault();
+			var input = e.target.commandLineInput.value;
+			var el = document.getElementById('terminalBody');
+			var intruderEl = document.getElementById('intruderProtocol');
+
+			if (input.toUpperCase() === 'YES' || input.toUpperCase() === 'Y') {
+				var div = 'Hello again, Eric! You never can be too sure these days. Your information is secure.';
+				intruderEl.innerHTML = '';
+				el.append(div);
+				this.setState({ intruderAlert: false });
+			} else {
+				var _div = 'You are denied access to hidden files.';
+				intruderEl.innerHTML = '';
+				el.append(_div);
+				this.setState({ intruderAlert: false });
+			}
+		}
+	}, {
+		key: 'intruderProtocol',
+		value: function intruderProtocol() {
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'normalCommand', id: 'intruderProtocol' },
+				_react2.default.createElement(
+					'div',
+					null,
+					'Hello, Eric!'
+				),
+				_react2.default.createElement(
+					'div',
+					null,
+					'To access hidden files, your identity will have to be verified.'
+				),
+				_react2.default.createElement(
+					'div',
+					null,
+					'Please answer the following security question.'
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'container-fluid noCommandInput' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'row' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-sm-3.5' },
+							'Q: This is Eric, right? (yes/no) :'
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-sm-8.5' },
+							_react2.default.createElement(
+								'form',
+								{ onSubmit: this.yesNo.bind(this) },
+								this.renderTextBox()
+							)
+						)
+					)
+				)
+			);
+		}
+	}, {
 		key: 'enterPressed',
 		value: function enterPressed(e) {
+			var _this2 = this;
+
 			e.preventDefault();
-			console.log('event', e.target.commandLineInput.value);
 
 			var input = e.target.commandLineInput.value;
-
+			console.log('input from enterPressed ', input);
 			var el = document.getElementById('terminalBody');
 
 			var terminalOwnerElement = document.createElement('div');
@@ -21082,19 +21161,17 @@ var App = function (_React$Component) {
 			// create element to insert into the terminal window
 			var commandResult = document.createElement('div');
 
-			console.log('inside clear', input === 'clear()');
 			if (_commands.commands[input.toUpperCase()]) {
-				if (input === 'help') {
-					for (var i = 0; i < _commands.commands.help.length; i++) {
+				if (input.toUpperCase() === 'HELP') {
+					for (var i = 0; i < _commands.commands.HELP.length; i++) {
 						var commandResultHelp = document.createElement('div');
 						commandResult.className = 'helpCommand';
 						i === 0 ? commandResultHelp.style.cssText = 'margin-left:10px;' : commandResultHelp.style.cssText = 'margin-left:25px;';
-						commandResultHelp.innerHTML = _commands.commands.help[i];
+						commandResultHelp.innerHTML = _commands.commands.HELP[i];
 						el.append(commandResultHelp);
 					}
 				} else {
 					// set top and bottom margin for readability for commands with returned info
-					console.log('font size', this.state.fontSize);
 					commandResult.className = 'normalCommand';
 					commandResult.innerHTML = _commands.commands[input.toUpperCase()];
 					// add element to the terminal window
@@ -21102,9 +21179,12 @@ var App = function (_React$Component) {
 				}
 			} else if (input === 'clear()') {
 				el.innerHTML = '';
+			} else if (input.toUpperCase() === 'HELLO') {
+				this.setState({ intruderAlert: true }, function () {
+					return _this2.intruderProtocol();
+				});
 			} else {
-				// if command not recognized, return this 'error' statement
-				// commandResult.style.cssText = `font-size:${this.state.fontSize};`
+				// if command not recognized, return 'error' statement
 				commandResult.className = 'noCommandInput';
 				commandResult.innerHTML = '-bash: ' + input + ': command not found';
 				el.append(commandResult);
@@ -21116,8 +21196,12 @@ var App = function (_React$Component) {
 			return _react2.default.createElement(
 				'div',
 				{ className: 'mainBody' },
-				_react2.default.createElement('div', { id: 'terminalBody' }),
 				_react2.default.createElement(
+					'div',
+					{ id: 'terminalBody' },
+					this.state.intruderAlert && this.intruderProtocol()
+				),
+				!this.state.intruderAlert && _react2.default.createElement(
 					'div',
 					{ className: 'commandLine' },
 					_react2.default.createElement(
@@ -21137,7 +21221,7 @@ var App = function (_React$Component) {
 								_react2.default.createElement(
 									'form',
 									{ onSubmit: this.enterPressed.bind(this) },
-									!this.state.isMobile ? _react2.default.createElement('input', { style: { fontFamily: "Courier New" }, name: 'commandLineInput', autoFocus: 'autoFocus' }) : _react2.default.createElement('input', { style: { fontFamily: "Courier New", fontSize: "13px" }, name: 'commandLineInput', autoFocus: 'autoFocus' })
+									this.renderTextBox()
 								)
 							)
 						)
