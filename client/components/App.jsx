@@ -58,7 +58,6 @@ class App extends React.Component {
 			el.append(div)
 			this.setState({intruderAlert: false})
 		}
-
 	}
 
 	intruderProtocol() {
