@@ -20004,21 +20004,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 var commands = exports.commands = {
 	WHOAMI: 'Eric Fanning',
-	WHATAMI: 'A Software Engineer who loves efficient problem solving creativity!',
-	ABOUT: 'Im a software engineer!',
+	WHATAMI: 'A Software Engineer who loves creative and efficient problem solving!',
+	ABOUT: 'I\'m a software engineer!',
 	CONTACTINFO: 'ericdfanning@gmail.com <br> (262) 237-2927',
 	BIGGESTPETPEEVE: 'Bad drivers?',
+	HENRYETTA: 'Lina is obbessed with this mystical coding creature.',
 	SOMETHINGNOONEKNOWS: 'I cried during a Disney movie',
-	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (usually), food!, and trying new things.',
+	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), food!, and trying new things.',
 	LINKEDIN: '<a href="linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a>',
-	MYAPPS: 'Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>' + 'LifeTime Capsule <a href="http://github.com/ericdfanning/LifetimeCapsule" target="_blank">github.com/ericdfanning/LifetimeCapsule</a><br><br>' + 'Bair Data <a href="http://thebairdata.com" target="_blank">thebairdata.com</a><br><br>' + 'And others...not deployed',
+	MYAPPS: 'Most Recent: <br><br> Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>' + 'LifeTime Capsule <a href="http://github.com/ericdfanning/LifetimeCapsule" target="_blank">github.com/ericdfanning/LifetimeCapsule</a><br><br>' + 'Bair Data <a href="http://thebairdata.com" target="_blank">thebairdata.com</a><br><br>' + 'And others...not deployed',
 	RESUME: '<a href="/resume" target="_blank"> MyResume.pdf </a>',
-	LINKS: '<a href="http://github.com/ericdfanning" target="_blank">github.com/ericdfanning</a><br><br><a href="http://thebairdata.com" target="_blank">thebairdata.com</a>',
 	"DESCRIPTION RENTOPIA": "A​ ​better​ ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.",
 	"DESCRIPTION LIFETIME CAPSULE": "Capture​ ​and​ ​save​ ​life’s​ ​moments​ ​through​ ​multimedia​ ​for​ ​you​ ​or​ ​the​ ​next​ ​generation.",
 	"DESCRIPTION BAIR DATA": "Bair​ ​Data​ ​crunches​ ​eBay​ ​sales​ ​data​ ​to​ ​show​ ​you​ ​top​ ​brands​ ​and​ ​items​ ​to​ ​improve market​ ​research​ ​for​ ​eBay​ ​resellers.",
 	OTHER: 'description APP_NAME <br> somethingNooneKnows <br> biggestPetPeeve <br> hobbies <br> clear()',
-	HELP: ['Try these commands: ', 'whoami', 'whatami', 'about', 'myApps', 'links', 'contactInfo', 'linkedin', 'other'],
+	HELP: ['Try these commands: ', 'whoami', 'whatami', 'about', 'myApps', 'contactInfo', 'linkedin', 'resume', 'other'],
 	LPB: '<img src="/lpb"></img>',
 	"HOW NEAT?": 'Pretty neat!',
 	"EASTER EGG?": 'Good luck guessing the commands! If you do, they\'re pretty neat!',
@@ -21041,6 +21041,7 @@ var App = function (_React$Component) {
 		_this.state = {
 			isMobile: false,
 			intruderAlert: false,
+			showCommandLineInput: true,
 			ownerText: 'Eric-Fannings-MacBook:~ EFanning$ '
 		};
 		return _this;
@@ -21148,10 +21149,21 @@ var App = function (_React$Component) {
 			var _this2 = this;
 
 			e.preventDefault();
-
+			// below is my way of having the input field always be focused at the bottom
+			//set local var 'finished' to track synchronous run time. 
+			var finished = false;
+			// remove input field. Since setState is async, check local var once done 
+			// put the input field back into html if local code is done running. 
+			this.setState({ showCommandLineInput: false }, function () {
+				finished === true ? _this2.setState({ showCommandLineInput: true }) : setTimeout(function () {
+					_this2.setState({ showCommandLineInput: true });
+				}, 500);
+			});
 			var input = e.target.commandLineInput.value;
-			console.log('input from enterPressed ', input);
+
 			var el = document.getElementById('terminalBody');
+			var cl = document.getElementById('commandLine');
+			cl.innerHTML = '';
 
 			var terminalOwnerElement = document.createElement('div');
 			terminalOwnerElement.innerHTML = this.state.ownerText + input;
@@ -21165,67 +21177,77 @@ var App = function (_React$Component) {
 				if (input.toUpperCase() === 'HELP') {
 					for (var i = 0; i < _commands.commands.HELP.length; i++) {
 						var commandResultHelp = document.createElement('div');
-						commandResult.className = 'helpCommand';
+						commandResult.className = 'helpCommand allInput';
 						i === 0 ? commandResultHelp.style.cssText = 'margin-left:10px;' : commandResultHelp.style.cssText = 'margin-left:25px;';
 						commandResultHelp.innerHTML = _commands.commands.HELP[i];
 						el.append(commandResultHelp);
 					}
 				} else {
 					// set top and bottom margin for readability for commands with returned info
-					commandResult.className = 'normalCommand';
+					commandResult.className = 'normalCommand allInput';
 					commandResult.innerHTML = _commands.commands[input.toUpperCase()];
 					// add element to the terminal window
 					el.append(commandResult);
 				}
 			} else if (input === 'clear()') {
-				el.innerHTML = '';
+				this.setState({ showCommandLineInput: false }, function () {
+					el.innerHTML = '';
+					_this2.setState({ showCommandLineInput: true });
+				});
 			} else if (input.toUpperCase() === 'HELLO') {
+
 				this.setState({ intruderAlert: true }, function () {
 					return _this2.intruderProtocol();
 				});
 			} else {
 				// if command not recognized, return 'error' statement
-				commandResult.className = 'noCommandInput';
+				commandResult.className = 'noCommandInput allInput';
 				commandResult.innerHTML = '-bash: ' + input + ': command not found';
 				el.append(commandResult);
 			}
+			finished = true;
+		}
+	}, {
+		key: 'renderCommandLine',
+		value: function renderCommandLine() {
+			return _react2.default.createElement(
+				'div',
+				{ id: 'commandLine', className: 'commandLine' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'container-fluid' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'row' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-sm-3.5 terminalOwnerName' },
+							this.state.ownerText
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-sm-8.5 commandLineInput' },
+							_react2.default.createElement(
+								'form',
+								{ onSubmit: this.enterPressed.bind(this) },
+								this.renderTextBox()
+							)
+						)
+					)
+				)
+			);
 		}
 	}, {
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
 				'div',
-				{ className: 'mainBody' },
+				{ id: 'mainBody', className: 'mainBody' },
 				_react2.default.createElement(
 					'div',
 					{ id: 'terminalBody' },
-					this.state.intruderAlert && this.intruderProtocol()
-				),
-				!this.state.intruderAlert && _react2.default.createElement(
-					'div',
-					{ className: 'commandLine' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'container-fluid' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'row' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'col-sm-3.5 terminalOwnerName' },
-								this.state.ownerText
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'col-sm-8.5 commandLineInput' },
-								_react2.default.createElement(
-									'form',
-									{ onSubmit: this.enterPressed.bind(this) },
-									this.renderTextBox()
-								)
-							)
-						)
-					)
+					this.state.intruderAlert && this.intruderProtocol(),
+					!this.state.intruderAlert && this.state.showCommandLineInput && this.renderCommandLine()
 				)
 			);
 		}
