@@ -13,7 +13,6 @@ class App extends React.Component {
 		}
 	}
 
-
 	componentWillMount() {
 		//check to see if device is laptop or phone
 		var w = window,
@@ -22,20 +21,20 @@ class App extends React.Component {
     g = d.getElementsByTagName('body')[0],
     x = w.innerWidth || e.clientWidth || g.clientWidth,
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-    if (x < 481) {
+    if (x <= 768) {
     	this.setState({isMobile: true, ownerText: 'EFannings-Mac:~ $ '})
     } else {
     	this.setState({isMobile: false})
     }
 	}
 
-	componentDidMount() { // if someone ends up on this page and is lost, this prompts them with help
-		setTimeout(() => {
-			return alert('type "help" for a list of commands')
-		}, 4000)
-	}
+	// componentDidMount() { // in case someone doesn't know where to start, this delayed alert box gives them some help.
+	// 	setTimeout(() => {
+	// 		return alert('type "help" for a list of commands')
+	// 	}, 3000)
+	// }
 
-	renderCommandLine() {
+	renderCommandLineTextArea() {
 		const mobileTag = <input style={{fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus"/>
 		const desktopTag = <input style={{fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus"/>
 		return this.state.isMobile ? mobileTag: desktopTag;
@@ -71,7 +70,7 @@ class App extends React.Component {
 						<div className="col-sm-3.5">Q: This is Eric, right? (yes/no) :</div>
 						<div className="col-sm-8.5">
 						 <form onSubmit={this.yesNo.bind(this)}>
-							  {this.renderCommandLine()}
+							  {this.renderCommandLineTextArea()}
 						  </form>
 						</div>
 					</div>
@@ -126,7 +125,7 @@ class App extends React.Component {
 				// set top and bottom margin for readability for commands with returned info
 				commandResult.className = 'normalCommand allInput'
 				commandResult.innerHTML = commands[input.toUpperCase()]
-				// add element to the terminal window 
+				// add element to the terminal window
 				el.append(commandResult)
 		  }
 
@@ -158,7 +157,7 @@ class App extends React.Component {
 						<div className="col-sm-3.5 terminalOwnerName">{this.state.ownerText}</div>
 						<div className="col-sm-8.5 commandLineInput">
 							<form onSubmit={this.enterPressed.bind(this)}>
-								{this.renderCommandLine()}
+								{this.renderCommandLineTextArea()}
 							</form>
 						</div>
 					</div>
