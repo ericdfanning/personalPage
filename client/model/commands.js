@@ -25,7 +25,7 @@ export const commands = {
 
 	SOMETHINGNOONEKNOWS: 'I cried during a Disney movie. #notashamed',
 
-	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), riding my bicyle, food!, and trying new things.',
+	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), riding my bicycle, FOOD!, and trying new things.',
 
 	MYAPPS: `Most Recent: <br><br> Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>` +
 	  `LifeTime Capsule <a href="http://github.com/ericdfanning/LifetimeCapsule" target="_blank">github.com/ericdfanning/LifetimeCapsule</a><br><br>` +
@@ -44,7 +44,7 @@ export const commands = {
 	LINKS: `<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>` +
 		`<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>`,
 
-	"DESCRIPTION RENTOPIA": "A​ ​better​ ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.",
+	"DESCRIPTION RENTOPIA": "A​ user focused ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.",
 
 	"DESCRIPTION LIFETIME CAPSULE": "Capture​ ​and​ ​save​ ​life’s​ ​moments​ ​through​ ​multimedia​ ​for​ ​you​ ​or​ ​the​ ​next​ ​generation.",
 
