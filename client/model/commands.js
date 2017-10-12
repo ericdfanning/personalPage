@@ -9,7 +9,7 @@ export const commands = {
 	  `I have a small ego and a big heart, with a love for helping others, which I had the privilege of doing in my last line of work.(See 'workHistory')<br>` +
 	  `I love teamwork and thrive in its environment. But, can I work alone? Absolutely.<br>` +
 	  `I'm a self starter. I have to be working on something and progressing forward.<br><br>` +
-	  `TL;DR I'm an easy to work with, passionate, hard working software engineer. I enjoy other stuff too. See 'hobbies'`,
+	  `TL;DR I'm an easy-to-work with, passionate, hard-working software engineer. I enjoy other stuff too.(See 'hobbies')`,
 
 	WORKHISTORY: `Racine Police Department: ​Police​ ​Officer​ ​-​ ​Racine,​ ​WI 2010-2016<br> I utilized​ ​critical​ ​thinking,​ ​problem​ ​solving,​ ​and​ ​communication​ ​skills​ ​in​ ​high
     stress​ ​environments​ ​with​ ​a​ ​team​ ​to​ ​serve​ ​a​ ​diverse​ ​community​ ​of​ ​people.<br><br>` +
@@ -25,7 +25,7 @@ export const commands = {
 
 	SOMETHINGNOONEKNOWS: 'I cried during a Disney movie. #notashamed',
 
-	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), riding my bicyle, food!, and trying new things.',
+	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), riding my bicycle, FOOD!, and trying new things.',
 
 	MYAPPS: `Most Recent: <br><br> Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>` +
 	  `LifeTime Capsule <a href="http://github.com/ericdfanning/LifetimeCapsule" target="_blank">github.com/ericdfanning/LifetimeCapsule</a><br><br>` +
@@ -44,7 +44,7 @@ export const commands = {
 	LINKS: `<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>` +
 		`<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>`,
 
-	"DESCRIPTION RENTOPIA": "A​ ​better​ ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.",
+	"DESCRIPTION RENTOPIA": "A​ ​user focused​ ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.",
 
 	"DESCRIPTION LIFETIME CAPSULE": "Capture​ ​and​ ​save​ ​life’s​ ​moments​ ​through​ ​multimedia​ ​for​ ​you​ ​or​ ​the​ ​next​ ​generation.",
 
@@ -60,7 +60,7 @@ export const commands = {
 	LPB: `<img src="/lpb"></img>`,
 	HENRYETTA: 'Lina is obbessed with this mystical coding creature.',
 	JOHNCENA: `<img src="https://media.giphy.com/media/Vzku9jyuef09G/giphy.gif"></img>`,
-	WHYAREMYPARENTSDISSAPPOINTEDINME: 'BECAUSE I\'M GARBAGE!! <br> <img src="http://brightcove04.o.brightcove.com/4244402466001/4244402466001_4758945394001_4524423608001-vs.jpg?pubId=4244402466001&videoId=4524423608001"></img>',
+	WHYAREMYPARENTSDISAPPOINTEDINME: 'BECAUSE I\'M GARBAGE!! <br> <img src="http://brightcove04.o.brightcove.com/4244402466001/4244402466001_4758945394001_4524423608001-vs.jpg?pubId=4244402466001&videoId=4524423608001"></img>',
 	"NPM INSTALL GARBAGE": `<img src="https://media.giphy.com/media/yPD4GW3iSCaFW/giphy.gif"></img>`,
 	HOWNEAT: 'Pretty neat!',
 	HOWNEATISTHAT: '<img src="https://media.giphy.com/media/7s45XYHzHCUpO/giphy.gif"></img>',
