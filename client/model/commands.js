@@ -58,6 +58,9 @@ export const commands = {
 
   // EASTER EGGS
 	LPB: `<img src="/lpb"></img>`,
+	BIRDS: 'RAWESOME!',
+	"BIRDS ARE AWESOME": 'YEAH YEAH YEAH DUDEROOSKI!!1',
+	BIRDSAREAWESOME: 'YEAH YEAH YEAH DUDEROOSKI!!1',
 	HENRYETTA: 'Lina is obbessed with this mystical coding creature.',
 	JOHNCENA: `<img src="https://media.giphy.com/media/Vzku9jyuef09G/giphy.gif"></img>`,
 	WHYAREMYPARENTSDISAPPOINTEDINME: 'BECAUSE I\'M GARBAGE!! <br> <img src="http://brightcove04.o.brightcove.com/4244402466001/4244402466001_4758945394001_4524423608001-vs.jpg?pubId=4244402466001&videoId=4524423608001"></img>',
