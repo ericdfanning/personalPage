@@ -15,11 +15,15 @@ app.use('/style.css', function(req, res) {
   res.sendFile(path.join(__dirname, '/client/style.css'))
 });
 
-app.use(express.static(path.join(__dirname, './dist')));
-
 app.use(bodyParser.json());
 
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, './client')));
+
+app.get('/bundle.js', browserify('./client/index.js', {
+  transform: [ [ require('babelify'), { presets: ['es2015', 'react'] } ] ]
+}));
 
 app.get('/resume', function(req, res) {
 	res.sendFile(path.join(__dirname, './resume.pdf'))
