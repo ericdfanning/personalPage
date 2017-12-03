@@ -27,9 +27,9 @@ export const commands = {
 
 	HOBBIES: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), riding my bicycle, FOOD!, and trying new things.',
 
-	MYAPPS: `Most Recent: <br><br> Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>` +
+	MYAPPS: `Most Recent: <br><br> Bair Data <a href="http://thebairdata.com" target="_blank">thebairdata.com</a><br><br>` +
+	  `Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>` +
 	  `LifeTime Capsule <a href="http://github.com/ericdfanning/LifetimeCapsule" target="_blank">github.com/ericdfanning/LifetimeCapsule</a><br><br>` +
-	  `Bair Data <a href="http://thebairdata.com" target="_blank">thebairdata.com</a><br><br>` +
 	  `For app description: 'description APP_NAME'<br><br> For other apps not deployed, type 'otherApps'`,
 
 
