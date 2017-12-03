@@ -1,14 +1,14 @@
-var browserify = require('browserify-middleware');
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var path = require('path');
-var cors = require('cors');
+const browserify = require('browserify-middleware');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const path = require('path');
+const cors = require('cors');
 
-var port = 3302
-app.set('port', port);
-app.listen(app.get('port'), function() {
-  console.log('Listening on port: ', port)
+let port = process.env.PORT || 8000
+
+app.listen(port, function() {
+    console.log('Listening on port: ' + port);
 });
 
 app.use('/style.css', function(req, res) {
