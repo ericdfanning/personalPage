@@ -30,9 +30,9 @@ class App extends React.Component {
 	}
 
 	componentDidMount() { // in case someone doesn't know where to start, this delayed alert box gives them some help.
-		// setTimeout(() => {
-		// 	return alert('type "help" for a list of commands')
-		// }, 3000)
+		setTimeout(() => {
+			return alert('type "help" for a list of commands')
+		}, 3000)
 	}
 
 	renderCommandLineTextArea() {
