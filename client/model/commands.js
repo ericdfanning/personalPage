@@ -59,6 +59,7 @@ export const commands = {
   // EASTER EGGS
 	LPB: `<img src="/lpb"></img>`,
 	BIRDS: 'RAWESOME!',
+ LINA: 'DIM SUM QUEEN SUPREME!!!',
 	"BIRDS ARE AWESOME": 'YEAH YEAH YEAH DUDEROOSKI!!1',
 	BIRDSAREAWESOME: 'YEAH YEAH YEAH DUDEROOSKI!!1',
   "THE TERRIBLE TROLL RAISES HIS SWORD": 'Attack troll with nasty knife!',
