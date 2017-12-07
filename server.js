@@ -5,7 +5,7 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 
-let port = process.env.PORT || 8000
+let port = process.env.PORT || 7000
 
 app.listen(port, function() {
     console.log('Listening on port: ' + port);

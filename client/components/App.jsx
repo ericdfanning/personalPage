@@ -8,6 +8,7 @@ class App extends React.Component {
 		this.state = {
  			isMobile: false,
  			intruderAlert: false,
+ 			zork: false,
  			showCommandLineInput: true,
  			ownerText: 'Eric-Fannings-MacBook:~ EFanning$ '
 		}
@@ -29,14 +30,20 @@ class App extends React.Component {
 	}
 
 	componentDidMount() { // in case someone doesn't know where to start, this delayed alert box gives them some help.
-		setTimeout(() => {
-			return alert('type "help" for a list of commands')
-		}, 3000)
+		// setTimeout(() => {
+		// 	return alert('type "help" for a list of commands')
+		// }, 3000)
 	}
 
 	renderCommandLineTextArea() {
 		const mobileTag = <input style={{fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus"/>
 		const desktopTag = <input style={{fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus"/>
+		return this.state.isMobile ? mobileTag: desktopTag;
+	}
+
+	renderCommandLineTextAreaZork() {
+		const mobileTag = <input style={{textAlign: "center", fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus"/>
+		const desktopTag = <input style={{textAlign: "center", fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus"/>
 		return this.state.isMobile ? mobileTag: desktopTag;
 	}
 
@@ -79,6 +86,46 @@ class App extends React.Component {
 		)
 	}
 
+	zorkInput(e) { // this function handles the special prompt response from the user, then returns the terminal to normal
+		e.preventDefault()
+
+		let input = e.target.commandLineInput.value
+		var el = document.getElementById('zork')
+		var el2 = document.getElementById('terminalBody')
+		// let div = 'You are denied access to hidden files until you can answer \'yes\'.'
+		// intruderEl.innerHTML = ''
+			console.log(input)
+		if (input.toUpperCase() === 'ATTACK TROLL WITH NASTY KNIFE') {
+			el.innerHTML = ''
+			let commandResult = document.createElement('div');
+		  commandResult.innerHTML = `<iframe src="https://giphy.com/embed/l1X9JyEpDkoRq" width="1152" height="650" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/chuck-l1X9JyEpDkoRq"></a></p>`
+		  el.append(commandResult)
+		  setTimeout(() => {
+			 this.setState({zork: false, showCommandLineInput: true})
+		  }, 10000)
+		} else {
+			el.innerHTML = ''
+			let commandResult = document.createElement('div');
+		  commandResult.innerHTML = `<img src='http://www.epicfail.com/wp-content/themes/epicfail-mobile/dist/images/logo.svg'></img>`
+		  el.append(commandResult)
+		  setTimeout(() => {
+			 this.setState({zork: false, showCommandLineInput: true})
+		  }, 2000)
+		}
+	}
+
+	renderTRS80Protocol() {
+		return (
+			<div id="zork">
+			  <div>The terrible troll raises his sword
+				 <form onSubmit={this.zorkInput.bind(this)}>
+					  {this.renderCommandLineTextAreaZork()}
+				  </form>
+				</div>
+			</div>
+		)
+	}
+
 	enterPressed(e) {
 		e.preventDefault()
 		// set command line input to a variable
@@ -103,7 +150,11 @@ class App extends React.Component {
 		  // this part inparticular creates the same text but shows it as the last command that was input. 
 		let terminalOwnerElement = document.createElement('div');
 		terminalOwnerElement.innerHTML = this.state.ownerText + input
-		el.append(terminalOwnerElement)
+
+		if (input.toUpperCase() !== 'ZORK') {
+		  el.append(terminalOwnerElement)
+	  }
+
 		// clear the command line of its text
 		e.target.commandLineInput.value = ''
 
@@ -139,6 +190,13 @@ class App extends React.Component {
 		} else if (input.toUpperCase() === 'HELLO') { // Hello creates a special prompt with a fake/pathetic security question
 			// render special prompt html to handle the hello event
 			this.setState({intruderAlert: true}, () => this.renderIntruderProtocol())
+		} else if (input.toUpperCase() === 'ZORK') {
+			this.setState({showCommandLineInput: false}, () => {
+			  el.innerHTML = ''
+				this.setState({zork: true})
+			})
+			// this.setState({zork: true, showCommandLineInput: false})
+
 		} else {
 			// Any other commands that are not recognized returns an 'error' statement
 			commandResult.className = 'noCommandInput allInput'
@@ -168,14 +226,25 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div id="mainBody" className="mainBody">
-			  <div id="terminalBody">
-				  {this.state.intruderAlert && this.renderIntruderProtocol()}
+			<div>
 
-				  {!this.state.intruderAlert && this.state.showCommandLineInput &&
-				  	this.renderCommandLine()
-				  }
-				</div>
+				{this.state.zork ?
+					<div className="zork">
+					  {this.renderTRS80Protocol()}
+					</div>
+				:
+					<div id="mainBody" className="mainBody">
+						{console.log('now showing')}
+					  <div id="terminalBody">
+						  {this.state.intruderAlert && this.renderIntruderProtocol()}
+
+						  {!this.state.intruderAlert && !this.state.zork && this.state.showCommandLineInput &&
+						  	this.renderCommandLine()
+						  }
+
+						</div>
+					</div>
+			  }
 			</div>
 		)
 	}
