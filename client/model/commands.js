@@ -11,7 +11,7 @@ export const commands = {
 	  `I'm a self starter. I have to be working on something and progressing forward.<br><br>` +
 	  `TL;DR I'm an easy-to-work with, passionate, hard-working software engineer. I enjoy other stuff too.(See 'hobbies')`,
 
-	WORKHISTORY: `The Home Depot: Associate Software Enginner - January 2018 - Present`
+	WORKHISTORY: `The Home Depot: Associate Software Enginner - January 2018 - Present` +
 	  `Racine Police Department: ​Police​ ​Officer​ ​-​ ​Racine,​ ​WI 2010 - 2016<br> I utilized​ ​critical​ ​thinking,​ ​problem​ ​solving,​ ​and​ ​communication​ ​skills​ ​in​ ​high
      stress​ ​environments​ ​with​ ​a​ ​team​ ​to​ ​serve​ ​a​ ​diverse​ ​community​ ​of​ ​people.<br><br>` +
     `​ExploreUSA RV Supercenter: ​Sales​ ​&​ ​Finance​ ​Representative​ ​-​ ​Kyle,​ ​TX 2017<br> I provided​ ​RV​ ​knowledge​ ​to​ ​customers​ ​while​ ​listening​ ​to​ ​their​ ​needs​ ​to​ ​deliver​ ​the
