@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const cors = require('cors');
+const cronJob = require('./cronJob');
 
 let port = process.env.PORT || 7000
 
@@ -31,6 +32,12 @@ app.get('/resume', function(req, res) {
 
 app.get('/lpb', function(req, res) {
 	res.sendFile(path.join(__dirname, './lennypepperbottom.jpg'))
+})
+
+app.get('/refresh', function(req, res) {
+	console.log('hit the server')
+  res.status(200)
+  res.send('it refreshed')
 })
 
 app.get('/', function(req, res) {
