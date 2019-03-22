@@ -5,10 +5,11 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 const cronJob = require('./cronJob');
+const axios = require('axios');
 
 let port = process.env.PORT || 7000
 
-app.listen(port, function() {
+app.listen(port, () => {
     console.log('Listening on port: ' + port);
 });
 
@@ -35,7 +36,7 @@ app.get('/lpb', function(req, res) {
 })
 
 app.get('/refresh', function(req, res) {
-	console.log('hit the server')
+	console.log('hit the server on refresh path')
   res.status(200)
   res.send('it refreshed')
 })
