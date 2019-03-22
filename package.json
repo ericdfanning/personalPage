@@ -28,9 +28,10 @@
     "cors": "^2.8.4",
     "cron": "^1.7.0",
     "express": "^4.16.0",
-    "nodemon": "^1.12.1",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "terminal-in-react": "^3.5.1"
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }

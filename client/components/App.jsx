@@ -36,14 +36,14 @@ class App extends React.Component {
 	}
 
 	renderCommandLineTextArea() {
-		const mobileTag = <input style={{fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus" autocomplete="off"/>
-		const desktopTag = <input style={{fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus" autocomplete="off"/>
+		const mobileTag = <input style={{fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off"/>
+		const desktopTag = <input style={{fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off"/>
 		return this.state.isMobile ? mobileTag: desktopTag;
 	}
 
 	renderCommandLineTextAreaZork() {
-		const mobileTag = <input style={{textAlign: "center", fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus" autocomplete="off"/>
-		const desktopTag = <input style={{textAlign: "center", fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus" autocomplete="off"/>
+		const mobileTag = <input style={{textAlign: "center", fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off"/>
+		const desktopTag = <input style={{textAlign: "center", fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off"/>
 		return this.state.isMobile ? mobileTag: desktopTag;
 	}
 
