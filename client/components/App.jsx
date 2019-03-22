@@ -164,11 +164,11 @@ class App extends React.Component {
 		if (commands[input.toLowerCase()]) {
 			// Special case for HELP prompt to display different command options
 			if (input.toLowerCase() === 'help') {
-				for (let i = 0; i < commands.HELP.length; i++) {
+				for (let i = 0; i < commands.help.length; i++) {
 					let commandResultHelp = document.createElement('div');
 					commandResult.className = 'helpCommand allInput'
 					i === 0 ? commandResultHelp.style.cssText = 'margin-left:10px;': commandResultHelp.style.cssText = 'margin-left:25px;';
-					commandResultHelp.innerHTML = commands.HELP[i]
+					commandResultHelp.innerHTML = commands.help[i]
 					el.append(commandResultHelp)
 				}
 			} else { // Here I handle all normal valid commands that are not HELP or HELLO

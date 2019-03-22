@@ -36,7 +36,6 @@ app.get('/lpb', function(req, res) {
 })
 
 app.get('/refresh', function(req, res) {
-	console.log('hit the server on refresh path')
   res.status(200)
   res.send('it refreshed from refresh path')
 })
