@@ -53,7 +53,7 @@ class App extends React.Component {
 		let el = document.getElementById('terminalBody')
 		let intruderEl = document.getElementById('intruderProtocol')
 
-		if (input.toUpperCase() === 'YES' || input.toUpperCase() === 'Y') {
+		if (input.toLowerCase() === 'yes' || input.toLowerCase() === 'y') {
 		  let div = 'Hello again, Eric! You never can be too sure these days. Your information is secure.'
 		  intruderEl.innerHTML = ''
 			el.append(div)
@@ -94,8 +94,7 @@ class App extends React.Component {
 		var el2 = document.getElementById('terminalBody')
 		// let div = 'You are denied access to hidden files until you can answer \'yes\'.'
 		// intruderEl.innerHTML = ''
-			console.log(input)
-		if (input.toUpperCase() === 'ATTACK TROLL WITH NASTY KNIFE') {
+		if (input.toLowerCase() === 'attack troll with nasty knife') {
 			el.innerHTML = ''
 			let commandResult = document.createElement('div');
 		  commandResult.innerHTML = `<iframe src="https://giphy.com/embed/l1X9JyEpDkoRq" width="1152" height="650" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/chuck-l1X9JyEpDkoRq"></a></p>`
@@ -151,7 +150,7 @@ class App extends React.Component {
 		let terminalOwnerElement = document.createElement('div');
 		terminalOwnerElement.innerHTML = this.state.ownerText + input
 
-		if (input.toUpperCase() !== 'ZORK') {
+		if (input.toLowerCase() !== 'zork') {
 		  el.append(terminalOwnerElement)
 	  }
 
@@ -162,9 +161,9 @@ class App extends React.Component {
 		let commandResult = document.createElement('div');
  
  		// first if block handles all normal valid requests
-		if (commands[input.toUpperCase()]) {
+		if (commands[input.toLowerCase()]) {
 			// Special case for HELP prompt to display different command options
-			if (input.toUpperCase() === 'HELP') {
+			if (input.toLowerCase() === 'help') {
 				for (let i = 0; i < commands.HELP.length; i++) {
 					let commandResultHelp = document.createElement('div');
 					commandResult.className = 'helpCommand allInput'
@@ -175,7 +174,7 @@ class App extends React.Component {
 			} else { // Here I handle all normal valid commands that are not HELP or HELLO
 				// set top and bottom margin for readability for commands with returned info
 				commandResult.className = 'normalCommand allInput'
-				commandResult.innerHTML = commands[input.toUpperCase()]
+				commandResult.innerHTML = commands[input.toLowerCase()]
 				// add element to the terminal window
 				el.append(commandResult)
 		  }
@@ -187,10 +186,10 @@ class App extends React.Component {
 			  el.innerHTML = ''
 				this.setState({showCommandLineInput: true})
 			})
-		} else if (input.toUpperCase() === 'HELLO') { // Hello creates a special prompt with a fake/pathetic security question
+		} else if (input.toLowerCase() === 'hello') { // Hello creates a special prompt with a fake/pathetic security question
 			// render special prompt html to handle the hello event
 			this.setState({intruderAlert: true}, () => this.renderIntruderProtocol())
-		} else if (input.toUpperCase() === 'ZORK') {
+		} else if (input.toLowerCase() === 'zork') {
 			this.setState({showCommandLineInput: false}, () => {
 			  el.innerHTML = ''
 				this.setState({zork: true})
@@ -234,7 +233,6 @@ class App extends React.Component {
 					</div>
 				:
 					<div id="mainBody" className="mainBody">
-						{console.log('now showing')}
 					  <div id="terminalBody">
 						  {this.state.intruderAlert && this.renderIntruderProtocol()}
 
