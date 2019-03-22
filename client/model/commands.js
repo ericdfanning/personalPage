@@ -27,7 +27,7 @@ export const commands = {
 
 	somethingnooneknows: 'I cried during a Disney movie. #notashamed',
 
-	hobbies: 'I love spending time with family (that includes my awesome dog), coding, listening to and writing music, traveling, exercise (mostly thinking about exercise), riding my bicycle, FOOD!, and trying new things.',
+	hobbies: 'I love spending time with my wife, son, and awesome dog, coding, digesting music, traveling, exercise (mostly thinking about it), FOOD!, other stuff, and trying new things.',
 
 	myapps: `Most Recent: <br><br> Bair Data <a href="http://thebairdata.com" target="_blank">thebairdata.com</a><br><br>` +
 	  `Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>` +
@@ -52,7 +52,7 @@ export const commands = {
 
 	"DESCRIPTION BAIR DATA": "Bair​ ​Data​ ​crunches​ ​eBay​ ​sales​ ​data​ ​to​ ​show​ ​you​ ​top​ ​brands​ ​and​ ​items​ ​to​ ​improve market​ ​research​ ​for​ ​eBay​ ​resellers.",
 
-	other: `somethingNooneKnows <br> biggestPetPeeve <br> hobbies <br> clear()`,
+	other: `somethingNoOneKnows <br> biggestPetPeeve <br> hobbies <br> clear()`,
 
 	clear: `Did you mean 'clear()'?`,
 
@@ -61,7 +61,7 @@ export const commands = {
   // EASTER EGGS
 	lbp: `<img src="/lpb"></img>`,
 	birds: 'RAWESOME!',
- lina: 'DIM SUM QUEEN SUPREME!!!',
+  lina: 'DIM SUM QUEEN SUPREME!!!',
 	"BIRDS ARE AWESOME": 'YEAH YEAH YEAH DUDEROOSKI!!1',
 	birdsareawesome: 'YEAH YEAH YEAH DUDEROOSKI!!1',
   "THE TERRIBLE TROLL RAISES HIS SWORD": 'Attack troll with nasty knife!',

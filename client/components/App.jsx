@@ -9,6 +9,9 @@ class App extends React.Component {
  			isMobile: false,
  			intruderAlert: false,
  			zork: false,
+ 			showZorkError: false,
+ 			showChuck: false,
+ 			showZorkInput: true,
  			showCommandLineInput: true,
  			ownerText: 'Eric-Fannings-MacBook:~ EFanning$ '
 		}
@@ -30,9 +33,9 @@ class App extends React.Component {
 	}
 
 	componentDidMount() { // in case someone doesn't know where to start, this delayed alert box gives them some help.
-		setTimeout(() => {
-			return alert('type "help" for a list of commands')
-		}, 3000)
+		// setTimeout(() => {
+		// 	return alert('type "help" for a list of commands')
+		// }, 2000)
 	}
 
 	renderCommandLineTextArea() {
@@ -90,26 +93,18 @@ class App extends React.Component {
 		e.preventDefault()
 
 		let input = e.target.commandLineInput.value
-		var el = document.getElementById('zork')
-		var el2 = document.getElementById('terminalBody')
 		// let div = 'You are denied access to hidden files until you can answer \'yes\'.'
 		// intruderEl.innerHTML = ''
 		if (input.toLowerCase() === 'attack troll with nasty knife') {
-			el.innerHTML = ''
-			let commandResult = document.createElement('div');
-		  commandResult.innerHTML = `<iframe src="https://giphy.com/embed/l1X9JyEpDkoRq" width="1152" height="650" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/chuck-l1X9JyEpDkoRq"></a></p>`
-		  el.append(commandResult)
+			this.setState({showZorkError: false, showZorkInput: false, showChuck: true})
 		  setTimeout(() => {
-			 this.setState({zork: false, showCommandLineInput: true})
+			 this.setState({zork: false, showCommandLineInput: true, showZorkInput: false, showChuck: false})
 		  }, 10000)
 		} else {
-			el.innerHTML = ''
-			let commandResult = document.createElement('div');
-		  commandResult.innerHTML = `<img src='http://www.epicfail.com/wp-content/themes/epicfail-mobile/dist/images/logo.svg'></img>`
-		  el.append(commandResult)
+			this.setState({showZorkError: true, showZorkInput: false, showChuck: false})
 		  setTimeout(() => {
-			 this.setState({zork: false, showCommandLineInput: true})
-		  }, 2000)
+			 this.setState({zork: false, showCommandLineInput: true, showZorkInput: false, showZorkError: false})
+		  }, 3000)
 		}
 	}
 
@@ -192,7 +187,7 @@ class App extends React.Component {
 		} else if (input.toLowerCase() === 'zork') {
 			this.setState({showCommandLineInput: false}, () => {
 			  el.innerHTML = ''
-				this.setState({zork: true})
+				this.setState({zork: true, showZorkInput: true})
 			})
 			// this.setState({zork: true, showCommandLineInput: false})
 
@@ -226,17 +221,33 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-
 				{this.state.zork ?
 					<div className="zork">
-					  {this.renderTRS80Protocol()}
+					  {this.state.showZorkInput && this.renderTRS80Protocol()}
+					  {this.state.showChuck &&
+					  	<div id="zork">
+					  		<iframe src="https://giphy.com/embed/l1X9JyEpDkoRq"
+					  			width="1152"
+					  			height="650"
+					  			frameBorder="0"
+					  			className="giphy-embed"
+					  			allowFullScreen>
+					  		</iframe>
+					  		<p><a href="https://giphy.com/gifs/chuck-l1X9JyEpDkoRq"></a></p>
+					  	</div>
+					  }
+					  {this.state.showZorkError &&
+					  	<div id="zork">
+						  	<img src='http://www.epicfail.com/wp-content/themes/epicfail-mobile/dist/images/logo.svg'></img>
+						  </div>
+						}
 					</div>
 				:
 					<div id="mainBody" className="mainBody">
 					  <div id="terminalBody">
 						  {this.state.intruderAlert && this.renderIntruderProtocol()}
 
-						  {!this.state.intruderAlert && !this.state.zork && this.state.showCommandLineInput &&
+						  {!this.state.intruderAlert && this.state.showCommandLineInput &&
 						  	this.renderCommandLine()
 						  }
 
