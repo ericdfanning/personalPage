@@ -1,7 +1,7 @@
 export const commands = {
 	whoami: 'Eric Fanning',
 
-	whatami: 'A Software Engineer who loves creative and efficient problem solving!',
+	whatami: 'A Software Engineer who loves creative and efficient problem solving. Any problem that, if solved, could make something better or easier for someone, I want to do it.',
 
 	about: `Simply put, I love to code. I love exploring new ideas and honing my skills.<br>` +
 	  `Creative and efficient solutions are what I strive for and clean, easy to reason about code is just plain beautiful.<br>` +
