@@ -4,21 +4,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const cors = require('cors');
-// const cronJob = require('./cronJob');
+const cronJob = require('./cronJob');
 const axios = require('axios');
-const { exec } = require('node-exec-promise');
 
 let port = process.env.PORT || 7777
 
-app.listen(port, () => { //A21AAFM9zuRrhNxJgI9uy3VJ-iUnDYMInDDRjv1ISJvUEtr3J2wHio847ZwzudDkSOl_WXZKSe1erYf3W932pnvMuUmjhcjLQ
+app.listen(port, () => {
     console.log('Listening on port: ' + port);
-    // exec(`curl \
-    // 		-v "https://api.paypal.com/v1/reporting/transactions" \
-    // 		-H "Accept: application/json" \
-				// -H "Content-Type: application/json" \
-				// -H "Authorization: Bearer A21AAFM9zuRrhNxJgI9uy3VJ-iUnDYMInDDRjv1ISJvUEtr3J2wHio847ZwzudDkSOl_WXZKSe1erYf3W932pnvMuUmjhcjLQ"
-   	// 	`)
-    // 	.then(res => console.log('did it work?', res.stdout)).catch( err => console.log('it failed', err))
 });
 
 app.use('/style.css', function(req, res) {

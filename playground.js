@@ -9,4 +9,4 @@
 // 	count++
 // }
 // var num = ['true', 'false']
-console.log(typeof num.join('|'))
+// console.log(typeof num.join('|'))
