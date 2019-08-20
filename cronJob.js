@@ -10,7 +10,7 @@ const CronJob = require('cron').CronJob;
   }
 
   let job = new CronJob({
-    cronTime: '*/30 * * * *',
+    cronTime: '*/30 9-22 * * *',
     onTick: scan,
     start: true,
     timeZone: 'America/Chicago'

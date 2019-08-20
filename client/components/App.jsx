@@ -6,6 +6,7 @@ class App extends React.Component {
 		super(props)
 
 		this.state = {
+			placeholder: true,
  			isMobile: false,
  			intruderAlert: false,
  			zork: false,
@@ -33,20 +34,18 @@ class App extends React.Component {
 	}
 
 	componentDidMount() { // in case someone doesn't know where to start, this delayed alert box gives them some help.
-		setTimeout(() => {
-			return alert('type "help" for a list of commands')
-		}, 2000)
+
 	}
 
 	renderCommandLineTextArea() {
-		const mobileTag = <input style={{fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off"/>
-		const desktopTag = <input style={{fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off"/>
+		const mobileTag = <input style={{fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off" placeholder={this.state.placeholder ? 'type help': ''}/>
+		const desktopTag = <input style={{fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off" placeholder={this.state.placeholder ? 'type help': ''}/>
 		return this.state.isMobile ? mobileTag: desktopTag;
 	}
 
 	renderCommandLineTextAreaZork() {
-		const mobileTag = <input style={{textAlign: "center", fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off"/>
-		const desktopTag = <input style={{textAlign: "center", fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off"/>
+		const mobileTag = <input style={{textAlign: "center", fontFamily: "Courier New", fontSize: "13px"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off" />
+		const desktopTag = <input style={{textAlign: "center", fontFamily: "Courier New"}} name="commandLineInput" autoFocus="autoFocus" autoComplete="off" />
 		return this.state.isMobile ? mobileTag: desktopTag;
 	}
 
@@ -132,7 +131,7 @@ class App extends React.Component {
 		// remove command line so that command results can be appended. 
 		  // Since setState is async, check local var once aysnc is finished.
 		  // Then put the command line back into html if local code is done running. 
-		this.setState({showCommandLineInput: false}, () => {
+		this.setState({showCommandLineInput: false, placeholder: false}, () => {
 			// If for some reason the synchronous run time is delayed, a timer is set to re-render with the command line inserted back in.
 			finished === true ? this.setState({showCommandLineInput: true}): setTimeout(()=>{this.setState({showCommandLineInput: true})}, 1000)
 		})
@@ -174,7 +173,7 @@ class App extends React.Component {
 				el.append(commandResult)
 		  }
 
-		} else if (input === 'clear()') { // clears all text from the screen and starts over. Clean slate.
+		} else if (input === 'clear()' || input === 'clear') { // clears all text from the screen and starts over. Clean slate.
 			// In order to achieve this and overcome a bug, I removed the command line,
 			  // cleared all command results and text, then inserted the command line back in.
 			this.setState({showCommandLineInput: false}, () => {
@@ -201,6 +200,10 @@ class App extends React.Component {
 		finished = true // the variable used at the top of this function to handle showing the command line
 	}
 
+	closePopUp() {
+		this.setState({showInitialAlert: false})
+	}
+
 	renderCommandLine() {
     return (
 			<div id="commandLine" className="commandLine">
@@ -221,6 +224,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+
+
 				{this.state.zork ?
 					<div className="zork">
 					  {this.state.showZorkInput && this.renderTRS80Protocol()}

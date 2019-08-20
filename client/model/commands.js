@@ -1,18 +1,20 @@
 export const commands = {
 	whoami: 'Eric Fanning',
 
-	whatami: 'A Software Engineer who loves creative and efficient problem solving. Any problem that, if solved, could make something better or easier for someone, I want to do it.',
+	whatami: 'A Software Engineer who loves creative and efficient problem solving. I want to work on ny problem that, if solved, could make something better or easier for someone.',
 
-	about: `Simply put, I love to code. I love exploring new ideas and honing my skills.<br>` +
-	  `Creative and efficient solutions are what I strive for and clean, easy to reason about code is just plain beautiful.<br>` +
-	  `There's more to me than just software engineering.<br>` +
+	about: `I love to solve problems. Especially with code.<br>` +
+	  `Creative and efficient solutions are what I strive for.<br>` +
+	  `I think clean and easy to reason about code is just plain beautiful.<br>` +
+	  `I'm passionate about clarity and brevity in process and I enjoy improving documentation wherever I can.<br>` +
+	  `If I'm not making it easier for whoever comes after me, then I'm doing it wrong.<br>` +
 	  `I have a small ego and a big heart, with a love for helping others, which I had the privilege of doing in my last line of work.(See 'workHistory')<br>` +
-	  `I love teamwork and thrive in its environment. But, can I work alone? Absolutely.<br>` +
-	  `I'm a self starter. I have to be working on something and progressing forward.<br><br>` +
+	  `I love teamwork and thrive in its environment. But I also enjoy working alone because it allows me to put my head down to plow through whatever I'm working on.<br>` +
+	  `I'm a self starter and I'm always looking to improve things where I can. (This is what drove most of the apps I've worked on.)<br><br>` +
 	  `TL;DR I'm an easy-to-work with, passionate, hard-working software engineer. I enjoy other stuff too.(See 'hobbies')`,
 
-	workhistory: `The Home Depot: Associate Software Engineer - January 2018 - Present<br> Front end coding writing a custom testing framework for cross platform 
-	   testing for all front end teams. Have you ever been to homedepot.com? I code that stuff.<br><br>` +
+	workhistory: `The Home Depot: Software Engineer - January 2018 - Present<br> Front end development creating new features for Major Appliances for the
+		 end to end customer experience. I also created and maintain an internal tool used by multiple development teams.<br><br>` +
 	  `Racine Police Department: ​Police​ ​Officer​ ​-​ ​Racine,​ ​WI 2010 - 2016<br> I utilized​ ​critical​ ​thinking,​ ​problem​ ​solving,​ ​and​ ​communication​ ​skills​ ​in​ ​high
      stress​ ​environments​ ​with​ ​a​ ​team​ ​to​ ​serve​ ​a​ ​diverse​ ​community​ ​of​ ​people.<br><br>` +
     `​ExploreUSA RV Supercenter: ​Sales​ ​&​ ​Finance​ ​Representative​ ​-​ ​Kyle,​ ​TX 2017<br> I provided​ ​RV​ ​knowledge​ ​to​ ​customers​ ​while​ ​listening​ ​to​ ​their​ ​needs​ ​to​ ​deliver​ ​the
@@ -23,49 +25,54 @@ export const commands = {
 
 	contactinfo: `ericdfanning@gmail.com <br> (262) 237-2927`,
 
-	biggestpetpeeve: 'Bad drivers?',
+	"contact info": `ericdfanning@gmail.com <br> (262) 237-2927`,
 
 	somethingnooneknows: 'I cried during a Disney movie. #notashamed',
 
-	hobbies: 'I love spending time with my wife, son, and awesome dog, coding, digesting music, traveling, exercise (mostly thinking about it), FOOD!, other stuff, and trying new things.',
+	hobbies: 'I love spending time with my wife, son, and dog, coding, digesting music, traveling, exercise (mostly thinking about it), FOOD!, other stuff, and trying new things.',
 
-	myapps: `Most Recent: <br><br> Bair Data <a href="http://thebairdata.com" target="_blank">thebairdata.com</a><br><br>` +
-	  `Rentopia <a href="http://myrentopia.com" target="_blank">www.myrentopia.com</a><br><br>` +
-	  `LifeTime Capsule <a href="http://github.com/ericdfanning/LifetimeCapsule" target="_blank">github.com/ericdfanning/LifetimeCapsule</a><br><br>` +
-	  `For app description: 'description APP_NAME'<br><br> For other apps not deployed, type 'otherApps'`,
+	myprojects: `Most Recent: <br><br> Satellite - <span>satellite.homedepot.com</span> (Internal facing enterprise application)<br><br>` +
+		`Mock data server <br><br>` +
+		`Feature Switch Easy <br><br>` +
+	  `Bair Data <br><br>` +
+	  `My Personal Page<br><br>` +
+	  `Rentopia <br><br>` +
+	  `For project description, just type the project name.<br><br> For other projects, type 'otherProjects'`,
 
 
-  otherapps: `10-43: <br> A ​mobile​ ​app​ ​allowing​ ​searchable​ ​work-related​ ​data​ ​using​ ​Parse​ Cloud ​storage​ ​and CoreData​ ​in​ ​Swift.<br><br>` +
+  otherprojects: `Lifetime Capsule: A MEAN SPA that allows you to capture​ ​and​ ​save​ ​life’s​ ​moments​ ​through​ ​multimedia​ ​for​ ​you​ ​or​ ​the​ ​next​ ​generation.<br><br>` +
+  	`10-43: Creator | A ​mobile​ ​app​ ​allowing​ ​searchable​ ​work-related​ ​data​ ​using​ ​Parse​ Cloud ​storage​ ​and CoreData​ ​in​ ​Swift.<br><br>` +
 	  `Easy Budget:​ ​Creator | A mobile​ ​budget​ ​app​, implemented​ ​with Parse cloud​ ​storage​, ​for​ ​simple​ ​budget keeping​ in ​Swift.<br><br>` +
 	  `Price Compare:​ Creator | A ​Swift​ ​mobile​ ​app​ ​to​ ​keep​ ​track​ ​of​ ​prices​ ​across​ ​different grocery stores​ ​using​ ​CoreData.<br><br>` +
-	  `Concreet Cal:​ ​Front End | An ​intuitive​ ​UI​ ​for​ ​calendar​ ​event​ ​editing​ ​via​ ​dynamic​ ​React modals​ ​connected ​to​ ​Google’s​ ​calendar​ ​API.<br><a href="​http://github.com/ericdfanning/concreet-legacy" target="_blank">Open in GitHub</a><br><br>` +
-	  `ODIGAT Tat:​ ​Full-Stack​ ​|​ ​A simple ​single-page​ ​MERN​ ​app​ to​ ​share​ ​and​ ​keep track of tattoo​ ​ideas.<br><a href="​http://github.com/ericdfanning/hratx28-mvp" target="_blank">Open in GitHub</a><br><br>`,
+	  `Concreet Cal:​ ​Front End | An ​intuitive​ ​UI​ ​for​ ​calendar​ ​event​ ​editing​ ​via​ ​dynamic​ ​React modals​ ​connected ​to​ ​Google’s​ ​calendar​ ​API.`,
 
 	resume: `click -> <a href="/resume" target="_blank"> MyResume.pdf </a>`,
 
 	links: `<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>` +
 		`<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>`,
 
-	"DESCRIPTION RENTOPIA": "A​ ​UX focused​ ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.",
+	'rentopia': 'A​ ​UX focused​ ​platform​ ​for​ ​managing​ ​Landlord/Tenant​ ​communication​ ​and​ ​needs.',
 
-	"DESCRIPTION LIFETIME CAPSULE": "Capture​ ​and​ ​save​ ​life’s​ ​moments​ ​through​ ​multimedia​ ​for​ ​you​ ​or​ ​the​ ​next​ ​generation.",
+	'bair data': 'Bair​ ​Data​ ​crunches​ ​eBay​ ​sales​ ​data​ ​to​ ​show​ ​you​ ​top​ ​brands​ ​and​ ​items​ ​to​ ​improve market​ ​research​ ​for​ ​eBay​ ​resellers.',
 
-	"DESCRIPTION BAIR DATA": "Bair​ ​Data​ ​crunches​ ​eBay​ ​sales​ ​data​ ​to​ ​show​ ​you​ ​top​ ​brands​ ​and​ ​items​ ​to​ ​improve market​ ​research​ ​for​ ​eBay​ ​resellers.",
+	'satellite': '',
 
-	other: `somethingNoOneKnows <br> biggestPetPeeve <br> hobbies <br> clear()`,
+	'my Personal Page': '',
 
-	clear: `Did you mean 'clear()'?`,
+	'mock data server': 'Development locally can be difficult without the right data. I created a mock server for checking an appliance\'s availability. This data is otherwise inaccessible and would prevent proper feature development and testing. I put in the time and effort to create an easy to use, well documented, deployed service that is now used by other developers and QEs.',
 
-	help: ['Try these commands: ', 'whoami', 'whatami', 'about', 'resume', 'workHistory', 'education', 'myApps', 'contactInfo', 'links', 'other'],
+	'feature Switch Easy': '',
+
+	other: `somethingNoOneKnows <br> hobbies <br> clear()`,
+
+	help: ['Try these commands: ', 'about', 'resume', 'contactInfo', 'myProjects', 'whoami', 'whatami', 'workHistory', 'links', 'education', 'other'],
 
   // EASTER EGGS
-	lbp: `<img src="/lpb"></img>`,
+	lpb: `<img src="/lpb"></img>`,
 	birds: 'RAWESOME!',
   lina: 'DIM SUM QUEEN SUPREME!!!',
 	"BIRDS ARE AWESOME": 'YEAH YEAH YEAH DUDEROOSKI!!1',
 	birdsareawesome: 'YEAH YEAH YEAH DUDEROOSKI!!1',
-  "THE TERRIBLE TROLL RAISES HIS SWORD": 'Attack troll with nasty knife!',
-  "THE TERRIBLE TROLL RAISES HIS SWORD.": 'Attack troll with nasty knife!',
 	henryetta: 'Lina is obbessed with this mystical coding creature.',
 	johncena: `<img src="https://media.giphy.com/media/Vzku9jyuef09G/giphy.gif"></img>`,
 	"NPM INSTALL GARBAGE": `<img src="https://media.giphy.com/media/yPD4GW3iSCaFW/giphy.gif"></img>`,

@@ -12,6 +12,14 @@ body {
   font-family: "Courier New", sans-serif !important;
 }
 
+.helpPopUp {
+	position: absolute;
+	z-index: 100;
+	margin: auto 0;
+	width: 200px;
+	height: 200px;
+}
+
 .zork {
 	background-color: black;
   color: #1ec503;
@@ -85,9 +93,7 @@ img {
 	}
 
 	.normalCommand {
-		margin-top: 15px;
-		margin-bottom: 15px;
-		margin-left: 25px;
+		margin: 15px 25px;
 		font-size: 13px;
 		background-color: black;
 	}
@@ -142,9 +148,7 @@ img {
 	}
 
 	.normalCommand {
-		margin-top: 15px;
-		margin-bottom: 15px;
-		margin-left: 25px;
+		margin: 15px 25px;
 		font-size: 22px;
 		background-color: black;
 	}
@@ -201,9 +205,7 @@ img {
 	}
 
 	.normalCommand {
-		margin-top: 15px;
-		margin-bottom: 15px;
-		margin-left: 25px;
+		margin: 15px 25px;
 		font-size: 22px;
 		background-color: black;
 	}
@@ -260,9 +262,7 @@ img {
 	}
 
 	.normalCommand {
-		margin-top: 15px;
-		margin-bottom: 15px;
-		margin-left: 25px;
+		margin: 15px 25px;
 		font-size: 22px;
 		background-color: black;
 	}
@@ -318,9 +318,7 @@ img {
 	}
 
 	.normalCommand {
-		margin-top: 15px;
-		margin-bottom: 15px;
-		margin-left: 25px;
+		margin: 15px 25px;
 		font-size: 22px;
 		background-color: black;
 	}

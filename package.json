@@ -28,8 +28,11 @@
     "cors": "^2.8.4",
     "cron": "^1.7.0",
     "express": "^4.16.0",
+    "nodemon": "^1.18.10",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "nodemon": "^1.18.10"
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "node-exec-promise": "^1.0.2"
   }
 }
