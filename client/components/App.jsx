@@ -14,7 +14,7 @@ class App extends React.Component {
  			showChuck: false,
  			showZorkInput: true,
  			showCommandLineInput: true,
- 			ownerText: 'Eric-Fannings-MacBook:~ EFanning$ '
+ 			ownerText: 'EFannings-Mac:~ $ '
 		}
 	}
 
@@ -27,7 +27,7 @@ class App extends React.Component {
     x = w.innerWidth || e.clientWidth || g.clientWidth,
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
     if (x <= 768) {
-    	this.setState({isMobile: true, ownerText: 'EFannings-Mac:~ $ '})
+    	this.setState({isMobile: true})
     } else {
     	this.setState({isMobile: false})
     }
