@@ -10,3 +10,5 @@
 // }
 // var num = ['true', 'false']
 // console.log(typeof num.join('|'))
+// let str = 'hello we\'re here'
+// console.log(str)
