@@ -31,6 +31,10 @@ app.get('/resume', function(req, res) {
 	res.sendFile(path.join(__dirname, './resume.pdf'))
 })
 
+app.get('/coolresume', function(req, res) {
+	res.sendFile(path.join(__dirname, './coolResume.pdf'))
+})
+
 app.get('/lpb', function(req, res) {
 	res.sendFile(path.join(__dirname, './lennypepperbottom.jpg'))
 })

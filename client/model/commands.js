@@ -46,7 +46,7 @@ export const commands = {
 	  `Price Compare:​ Creator | A ​Swift​ ​mobile​ ​app​ ​to​ ​keep​ ​track​ ​of​ ​prices​ ​across​ ​different grocery stores​ ​using​ ​CoreData.<br><br>` +
 	  `Concreet Cal:​ ​Front End | An ​intuitive​ ​UI​ ​for​ ​calendar​ ​event​ ​editing​ ​via​ ​dynamic​ ​React modals​ ​connected ​to​ ​Google’s​ ​calendar​ ​API.`,
 
-	resume: `click -> <a href="/resume" target="_blank"> MyResume.pdf </a>`,
+	resume: `click -> <a href="/resume" target="_blank"> MyResume.pdf </a> <br> click -> <a href="/coolresume" target="_blank"> MyCoolerResume.pdf </a>`,
 
 	links: `<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>` +
 		`<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>`,
