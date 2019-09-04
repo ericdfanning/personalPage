@@ -225,7 +225,6 @@ class App extends React.Component {
 		return (
 			<div>
 
-
 				{this.state.zork ?
 					<div className="zork">
 					  {this.state.showZorkInput && this.renderTRS80Protocol()}
