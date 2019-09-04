@@ -34,7 +34,7 @@ export const commands = {
 
 	somethingnooneknows: 'I cried during a Disney movie. yep',
 
-	hobbies: 'I love spending time with my wife, son, and dog, coding, digesting music, traveling, exercise (mostly thinking about it), FOOD!, other stuff, and trying new things.',
+	hobbies: 'I love spending time with my wife, son, and dog, coding, learning about trading, digesting music, traveling, exercise (mostly thinking about it), FOOD!, other stuff, and trying new things.',
 
 	myprojects: `Most Recent: <br><br> Satellite - <span>satellite.homedepot.com</span> (Internal facing enterprise application)<br><br>
 		Poshibly (in the works)<br><br>
