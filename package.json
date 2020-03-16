@@ -30,7 +30,7 @@
     "express": "^4.16.0",
     "nodemon": "^1.18.10",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.1"
   },
   "devDependencies": {
     "node-exec-promise": "^1.0.2"
