@@ -119,10 +119,20 @@ class App extends React.Component {
 		)
 	}
 
+	sanitizeInput(input) {
+		const htmlTags = /<[^>]*>(.*?)<[^>]*>/g;
+		return input ? input.replace(htmlTags, '') : null;
+	}
+
+	checkForCD(input) {
+		const splitInput = input.split(' ');
+		return splitInput[0] === 'cd' ? splitInput[1] : input;
+	}
+
 	enterPressed(e) {
 		e.preventDefault()
 		// set command line input to a variable
-		let input = e.target.commandLineInput.value
+		let input = this.sanitizeInput(e.target.commandLineInput.value);
 
 		// below is my way of having the input field always be focused at the bottom
 		//set local var 'finished' to track synchronous run time. 
@@ -155,6 +165,7 @@ class App extends React.Component {
 		let commandResult = document.createElement('div');
  
  		// first if block handles all normal valid requests
+ 		input = this.checkForCD(input);
 		if (commands[input.toLowerCase()]) {
 			// Special case for HELP prompt to display different command options
 			if (input.toLowerCase() === 'help') {

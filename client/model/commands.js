@@ -1,22 +1,25 @@
 export const commands = {
 	whoami: 'Eric Fanning',
 
-	about: `TL;DR I'm an easy-to-work with, passionate, hard-working software engineer.<br>
+	about: `TL;DR I'm an easy-to-work with, thorough, hard-working software engineer with a passion for helpfulness.<br>
 		...I enjoy other stuff too.(See 'hobbies')<br><br>
-		I'm a passionate problem solver and have an entrepreneurial
+		I'm a problem solver and have an entrepreneurial
  		spirit for creating anything that can help someone.
 		I take my quality of work seriously, but try not to take my work too seriously.
   	I think clean and easy to reason about code is just plain beautiful.
-  	I'm passionate about clarity and brevity in process and I enjoy improving documentation wherever I can.
+  	I give much attention to clarity and brevity in process and I enjoy improving documentation wherever I can.
   	If I'm not making it easier for whoever comes after me, then I'm doing it wrong.
   	I have a small ego and a big heart, with a love for helping others, which I had the privilege of doing in my last line of work.(See 'workHistory')
   	I love teamwork and thrive in its environment. But I also enjoy working alone because it allows me to put my head down to truck through whatever I'm working on.
   	I'm a self starter and I'm always looking to improve things where I can. (This is what drove most of the apps I've worked on.)<br><br>`,
 
-	workhistory: `The Home Depot: Software Engineer - January 2018 - Present<br> 
+	workhistory: `The Home Depot: <br>
+		Senior Software Engineer - Jan 2020 - Present<br> 
+		Software Engineer - Jan 2018 - Jan 2020<br> 
 	  Team Lead/Scrum Master of the company’s largest product category, namely, Appliances.
 		Delivering mostly front-end (with some backend) features to the B2C .com site for increased customer experience and ease of use. 
-		My team helps shape the user experience for the category that drives 40% of all sales.<br><br>
+		My team helps shape the user experience for the category that drives 40% of all sales.<br>
+		See 'resume' for more<br><br>
 	  Racine Police Department: ​Police​ ​Officer​ ​-​ ​Racine,​ ​WI 2010 - 2016<br>
 	  I utilized​ ​critical​ ​thinking,​ ​problem​ ​solving,​ ​and​ ​communication​ ​skills​ ​in​ ​high
 	  stress​ ​environments​ ​with​ ​a​ ​team​ ​to​ ​serve​ ​a​ ​diverse​ ​community​ ​of​ ​people.<br><br>
@@ -71,6 +74,8 @@ export const commands = {
 	other: `somethingNoOneKnows <br> hobbies <br> clear`,
 
 	help: ['Try these commands: ', 'about', 'resume', 'contactInfo', 'myProjects', 'whoami', 'workHistory', 'links', 'education', 'other'],
+
+	ls: ['about', 'resume', 'contactInfo', 'myProjects', 'whoami', 'workHistory', 'links', 'education', 'other'],
 
   // EASTER EGGS
 	lpb: `<img src="/lpb"></img>`,
