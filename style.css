@@ -1,0 +1,339 @@
+html {
+	background-color: black;
+}
+
+body {
+	background-color: black;
+  color: #1ec503;
+  width: 100%;
+  padding: 0;
+  margin:  0;
+  box-sizing: border-box;
+  font-family: "Courier New", sans-serif !important;
+}
+
+.helpPopUp {
+	position: absolute;
+	z-index: 100;
+	margin: auto 0;
+	width: 200px;
+	height: 200px;
+}
+
+.zork {
+	background-color: black;
+  color: #1ec503;
+  padding: 0;
+  margin:  0;
+  box-sizing: border-box;
+  font-family: "Courier New", sans-serif !important;
+  width: 100%;
+  height: 90vh;
+  position: relative;
+}
+
+#zork {
+	width: 100%;
+	text-align: center;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 40px;
+ /* top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;*/
+
+}
+
+img {
+	height: 300px;
+	width: 300px;
+}
+
+@media only screen and (min-width : 320px) {
+
+	.commandLineInput {
+		width: 55%;
+	}
+
+	.terminalOwnerName {
+		font-size: 13px;
+		margin-right: 10px;
+		padding-left: 2px !important;
+		padding-top: 3px;
+		background-color: black;
+	}
+
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		margin-right: 0px;
+		outline: none;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 13px;
+		background-color: black;
+	}
+
+	.noCommandInput {
+		font-size: 13px;
+		padding-left: 2px !important;
+		background-color: black;
+	}
+
+	.normalCommand {
+		margin: 15px 25px;
+		font-size: 13px;
+		background-color: black;
+	}
+
+	.helpCommand {
+		font-size: 13px;
+		background-color: black;
+	}
+
+	.commandLine {
+		background-color: black;
+	}
+}
+
+@media only screen and (min-width : 480px) {
+	.commandLineInput {
+		width: 55%;
+	}
+
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+		font-size: 1.25em;
+	}
+
+	.terminalOwnerName {
+		margin-right: 10px;
+		font-size: 22px;
+		background-color: black;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		outline: none;
+		overflow-wrap: break-word;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.noCommandInput {
+		font-size: 22px;
+		padding-left: 2px !important;
+		background-color: black;
+	}
+
+	.normalCommand {
+		margin: 15px 25px;
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.helpCommand {
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.commandLine {
+		background-color: black;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+	.commandLineInput {
+		width: 65%;
+	}
+
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+		font-size: 1.25em;
+	}
+
+	.terminalOwnerName {
+		margin-right: 10px;
+		font-size: 22px;
+		background-color: black;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		outline: none;
+		overflow-wrap: break-word;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.noCommandInput {
+		font-size: 22px;
+		padding-left: 2px !important;
+		background-color: black;
+	}
+
+	.normalCommand {
+		margin: 15px 25px;
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.helpCommand {
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.commandLine {
+		background-color: black;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+	.commandLineInput {
+		width: 53%;
+	}
+
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+		font-size: 1.25em;
+	}
+
+	.terminalOwnerName {
+		margin-right: 10px;
+		font-size: 22px;
+		background-color: black;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		outline: none;
+		overflow-wrap: break-word;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.noCommandInput {
+		font-size: 22px;
+		padding-left: 2px !important;
+		background-color: black;
+	}
+
+	.normalCommand {
+		margin: 15px 25px;
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.helpCommand {
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.commandLine {
+		background-color: black;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+	.commandLineInput {
+		width: 67%;
+	}
+	.mainBody {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		color: #1ec503;
+		font-size: 1.25em;
+	}
+
+	.terminalOwnerName {
+		margin-right: 10px;
+		font-size: 22px;
+		background-color: black;
+	}
+
+	input {
+		background-color: black;
+		color: #1ec503;
+		width: 100%;
+		outline: none;
+		overflow-wrap: break-word;
+		border: none;
+	}
+
+	#terminalBody {
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.noCommandInput {
+		font-size: 22px;
+		padding-left: 2px !important;
+		background-color: black;
+	}
+
+	.normalCommand {
+		margin: 15px 25px;
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.helpCommand {
+		font-size: 22px;
+		background-color: black;
+	}
+
+	.commandLine {
+		background-color: black;
+	}
+}
+
+
+
+/* BRIGHTER GREEN FONT #40FF57 */
+/* OTHER FONT CHOICE "Terminal Dosis"*/
