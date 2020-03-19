@@ -58,7 +58,7 @@ const commandsMap = {
 	  Lifetime Capsule: Front-End | Implemented AngularJS web app to view and upload multimedia to a cloud platform.<br><br>
 	  Concreet Cal:​ ​Front-End | Designed intuitive UI for calendar event editing via dynamic React modals connecting to Google’s calendar API.`,
 
-	resume: `click -> <a href="/resume" target="_blank"> MyResume.pdf </a> <br> click -> <a href="/coolresume" target="_blank"> MyCoolerResume.pdf </a>`,
+	resume: `click -> <a href="resume.pdf" target="_blank"> MyResume.pdf </a> <br> click -> <a href="coolresume.pdf" target="_blank"> MyCoolerResume.pdf </a>`,
 
 	links: `<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>` +
 		`<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>`,
@@ -82,7 +82,6 @@ const commandsMap = {
 	ls: ['about', 'resume', 'contactInfo', 'myProjects', 'whoami', 'workHistory', 'links', 'education', 'other'],
 
   // EASTER EGGS
-	lpb: `<img src="/lpb"></img>`,
 	birds: 'RAWESOME!',
   lina: 'DIM SUM QUEEN SUPREME!!!',
 	"BIRDS ARE AWESOME": 'YEAH YEAH YEAH DUDEROOSKI!!1',
