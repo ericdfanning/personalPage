@@ -1,4 +1,8 @@
-export const commands = {
+export const commands = (input) => {
+	return commandsMap[input];
+};
+
+const commandsMap = {
 	whoami: 'Eric Fanning',
 
 	about: `TL;DR I'm an easy-to-work with, thorough, hard-working software engineer with a passion for helpfulness.<br>
@@ -91,4 +95,4 @@ export const commands = {
 	"EASTER EGG?":'Good luck guessing the commands! If you do, they\'re pretty neat!',
 	"EASTER EGG": 'Good luck guessing the commands! If you do, they\'re pretty neat!',
 	"EASTEREGG": 'Good luck guessing the commands! If you do, they\'re pretty neat!'
-};
+}

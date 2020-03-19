@@ -166,20 +166,20 @@ class App extends React.Component {
  
  		// first if block handles all normal valid requests
  		input = this.checkForCD(input);
-		if (commands[input.toLowerCase()]) {
+		if (commands(input.toLowerCase())) {
 			// Special case for HELP prompt to display different command options
 			if (input.toLowerCase() === 'help') {
-				for (let i = 0; i < commands.help.length; i++) {
+				for (let i = 0; i < commands(help).length; i++) {
 					let commandResultHelp = document.createElement('div');
 					commandResult.className = 'helpCommand allInput'
 					i === 0 ? commandResultHelp.style.cssText = 'margin-left:10px;': commandResultHelp.style.cssText = 'margin-left:25px;';
-					commandResultHelp.innerHTML = commands.help[i]
+					commandResultHelp.innerHTML = commands(help)[i]
 					el.append(commandResultHelp)
 				}
 			} else { // Here I handle all normal valid commands that are not HELP or HELLO
 				// set top and bottom margin for readability for commands with returned info
 				commandResult.className = 'normalCommand allInput'
-				commandResult.innerHTML = commands[input.toLowerCase()]
+				commandResult.innerHTML = commands(input.toLowerCase())
 				// add element to the terminal window
 				el.append(commandResult)
 		  }
