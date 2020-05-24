@@ -5,7 +5,7 @@ const CronJob = require('cron').CronJob;
   // **** This will run to find any stored category results that are older than 2 weeks and remove it
   const scan = () => {
     axios.get('http://ericdfanning.com/refresh')
-      .then( res => console.log('fetcehed', res.data))
+      .then( res => console.log('fetcehed'))
       .catch( err => console.log('couldnt GET', err))
   }
 

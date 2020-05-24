@@ -43,8 +43,10 @@ const commandsMap = {
 
 	hobbies: 'I love spending time with my wife, son, and dog, coding, learning about trading, digesting music, traveling, exercise (mostly thinking about it), FOOD!, other stuff, and trying new things.',
 
-	myprojects: `Most Recent: <br><br> Satellite - <span>satellite.homedepot.com</span> (Internal facing enterprise application)<br><br>
+	projects: `Most Recent: <br><br> Satellite - <span>satellite.homedepot.com</span> (Internal facing enterprise application)<br><br>
+		<a href="https://www.npmjs.com/package/@tencoder/longpressreact" target="_blank">LongPress</a><br><br>
 		Poshibly (in the works)<br><br>
+		Open-Haberdashery (in the works)<br><br>
 		Mock data server <br><br>
 		Feature Switch Easy <br><br>
 	  This page<br><br>
@@ -69,17 +71,21 @@ const commandsMap = {
 
 	'this page': 'page about me',
 
+	'open-haberdashery': 'A React web based dashboard that communicates with an <a href="https://www.openhab.org/" target="_blank">OpenHab</a> backend to allow a user to control their smart home devices via desktop or mobile.',
+
+	'longpress': 'A React npm module that allows for long press functionality on click and touch web devices. It\'s a wrapper component that accepts callback functions and uses context to provide child elements the ability to conditionally render.<br><br><a href="https://www.npmjs.com/package/@tencoder/longpressreact" target="_blank">LongPress</a>',
+
 	'poshibly': 'A Chrome Extension that automates social actions for professional resellers',
 
-	'mock data server': 'Development locally can be difficult without the right data. I created a mock server for checking an appliance\'s availability. This data is otherwise inaccessible and would prevent proper feature development and testing. I put in the time and effort to create an easy to use, well documented, deployed service that is now used by other developers and QEs.',
+	'mock data server': 'Local development can be difficult without the right data. I created a mock server for checking an appliance\'s availability. This data is otherwise inaccessible and would prevent proper feature development and testing. I put in the time and effort to create an easy to use, well documented, deployed service that is now used by other developers and QEs.',
 
 	'feature switch easy': 'Creator | Instead of changing 6 files in the repo, this script lets you add a feature switch to the repo in one line in the terminal ensuring contributor consistency.',
 
 	other: `somethingNoOneKnows <br> hobbies <br> clear`,
 
-	help: ['Try these commands: ', 'about', 'resume', 'contactInfo', 'myProjects', 'whoami', 'workHistory', 'links', 'education', 'other'],
+	help: ['Try these commands: ', 'about', 'resume', 'contactInfo', 'projects', 'whoami', 'workHistory', 'links', 'education', 'other'],
 
-	ls: ['about', 'resume', 'contactInfo', 'myProjects', 'whoami', 'workHistory', 'links', 'education', 'other'],
+	ls: ['about', 'resume', 'contactInfo', 'projects', 'whoami', 'workHistory', 'links', 'education', 'other'],
 
   // EASTER EGGS
 	birds: 'RAWESOME!',
