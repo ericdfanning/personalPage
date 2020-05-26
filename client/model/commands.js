@@ -50,6 +50,7 @@ const commandsMap = {
 		Mock data server <br><br>
 		Feature Switch Easy <br><br>
 	  This page<br><br>
+	  <a href="https://medium.com/@ericdfanning" target="_blank"> Writing about projects on Medium </a><br><br>
 	  For project description, just type the project name.<br> For other projects, type 'otherProjects'`,
 
 
@@ -63,7 +64,8 @@ const commandsMap = {
 	resume: `click -> <a href="resume.pdf" target="_blank"> MyResume.pdf </a> <br> click -> <a href="coolresume.pdf" target="_blank"> MyCoolerResume.pdf </a>`,
 
 	links: `<a href="http://linkedin.com/in/ericdfanning" target="_blank"> linkedin.com/in/ericdfanning </a><br><br>` +
-		`<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a>`,
+		`<a href="http://github.com/ericdfanning" target="_blank"> github.com/ericdfanning </a><br><br>` +
+		`<a href="https://medium.com/@ericdfanning" target="_blank"> medium.com/@ericdfanning </a>`,
 
 	'bair data': 'Bair​ ​Data​ ​is an easy to use UI that displays ranked eBay sales data, utilizing MongoDB and eBay’s API, to improve market research for eBay resellers.',
 
