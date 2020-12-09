@@ -44,8 +44,8 @@ const commandsMap = {
 	hobbies: 'I love spending time with my wife, son, and dog, coding, learning about trading, digesting music, traveling, exercise (mostly thinking about it), FOOD!, other stuff, and trying new things.',
 
 	projects: `Most Recent: <br><br> Satellite - <span>satellite.homedepot.com</span> (Internal facing enterprise application)<br><br>
-		<a href="https://www.npmjs.com/package/@tencoder/longpressreact" target="_blank">LongPress</a><br><br>
-		Poshibly (in the works)<br><br>
+		<a href="https://www.npmjs.com/package/@tencoder/longpressreact" target="_blank">LongPress</a> <- link<br><br>
+		<a href="http://www.itsposhibly.com" target="_blank">Poshibly</a> <- link<br><br>
 		Open-Haberdashery (in the works)<br><br>
 		Mock data server <br><br>
 		Feature Switch Easy <br><br>
