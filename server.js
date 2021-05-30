@@ -4,8 +4,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const cors = require('cors');
-// const cronJob = require('./cronJob');
-const axios = require('axios');
 
 let port = process.env.PORT || 7777
 

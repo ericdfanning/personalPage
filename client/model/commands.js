@@ -3,7 +3,6 @@ export const commands = (input) => {
 };
 
 const commandsMap = {
-	whoami: 'Eric Fanning',
 
 	about: `TL;DR I'm an easy-to-work with, thorough, hard-working software engineer with a passion for helpfulness.<br>
 		...I enjoy other stuff too.(See 'hobbies')<br><br>
@@ -102,9 +101,9 @@ const commandsMap = {
 
 	other: `somethingNoOneKnows <br> hobbies <br> clear`,
 
-	help: ['Try these commands: ', 'about', 'skills', 'resume', 'contactInfo', 'projects', 'whoami', 'workHistory', 'links', 'education', 'other'],
+	help: ['Try these commands: ', 'about', 'skills', 'resume', 'contactInfo', 'projects', 'workHistory', 'links', 'education', 'other'],
 
-	ls: ['about', 'skills', 'resume', 'contactInfo', 'projects', 'whoami', 'workHistory', 'links', 'education', 'other'],
+	ls: ['about', 'skills', 'resume', 'contactInfo', 'projects', 'workHistory', 'links', 'education', 'other'],
 
   // EASTER EGGS
 	birds: 'RAWESOME!',
