@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "dev": "nodemon server.js",
+    "watch": "webpack --mode development --watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "webpack --mode production",
-    "buildProd": "node node_modules/.bin/webpack --config webpack.config.prod.js",
-    "dev": "webpack --mode development --watch"
+    "build": "webpack --mode production && bash moveNeededFiles.sh",
+    "buildProd": "node node_modules/.bin/webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",

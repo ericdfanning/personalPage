@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const cors = require('cors');
-const cronJob = require('./cronJob');
+// const cronJob = require('./cronJob');
 const axios = require('axios');
 
 let port = process.env.PORT || 7777
@@ -31,26 +31,16 @@ app.get('/bundle.js', function(req, res) {
 	res.sendFile(path.join(__dirname, './build/bundle.js'))
 })
 
-app.get('/resume', function(req, res) {
+app.get('/resume.pdf', function(req, res) {
 	res.sendFile(path.join(__dirname, './resume.pdf'))
 })
 
-app.get('/coolresume', function(req, res) {
-	res.sendFile(path.join(__dirname, './coolResume.pdf'))
+app.get('/coolresume.pdf', function(req, res) {
+	res.sendFile(path.join(__dirname, './coolresume.pdf'))
 })
 
 app.get('/lpb', function(req, res) {
 	res.sendFile(path.join(__dirname, './lennypepperbottom.jpg'))
-})
-
-app.get('/refresh', function(req, res) {
-  res.status(200)
-  res.send('it refreshed from refresh path')
-})
-
-app.get('/duder', function(req, res) {
-  res.status(200)
-  res.send('duuuuuuuuuuuude!!!!!!')
 })
 
 app.get('/', function(req, res) {
