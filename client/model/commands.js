@@ -91,7 +91,7 @@ const commandsMap = {
 
 	'longpress': 'A React npm module that allows for long press functionality on click and touch web devices. It\'s a wrapper component that accepts callback functions and uses context to provide child elements the ability to conditionally render.<br><br><a href="https://www.npmjs.com/package/@tencoder/longpressreact" target="_blank">Click here</a> to check it out!',
 
-	'poshibly': 'A Chrome Extension that automates social actions for professional resellers on Poshmark.com. Customer discoverability of sellers\' listings are heavily based on interactions from the seller. This extension automates those interactions and saves a seller several hours a day.<br><br><a href="http://www.itsposhibly.com" target="_blank">Click here</a> to check it out!',
+	'poshibly': 'A Chrome Extension built in React that automates social actions for professional resellers on Poshmark.com. Customer discoverability of sellers\' listings are heavily based on interactions from the seller. This extension automates those interactions and saves a seller several hours a day.<br><br><a href="http://www.itsposhibly.com" target="_blank">Click here</a> to check it out!',
 
 	'mock data server': 'A Home Depot internal tool. Local development can be difficult without the right data. With meticulous documentation, I created a dynamically robust Java backend for mock data making it possible to fully test features during local development and in staging environments for all devs and QE\'s in the online Org.',
 
